@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Övningar
 {
-    class Program
+    public class Constans
     {
-        static void Main(string[] args)
+        public static string PathToTxtFile
         {
+            get(@"")
 
-        
         }
     }
 }

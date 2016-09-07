@@ -6,12 +6,7 @@ using System.Threading.Tasks;
 
 namespace Övningar
 {
-    class Program
+    public class Repository
     {
-        static void Main(string[] args)
-        {
-
-        
-        }
     }
 }
