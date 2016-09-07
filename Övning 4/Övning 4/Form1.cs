@@ -44,9 +44,9 @@ namespace Övning_4
 
 
             textBox3Days.Text = (edt - edt).TotalDays.ToString()+ " Days";
-            textBox1Month.Text = (edt - sdt).TotalHours.ToString()+ " Hours";
+            textBox1Month.Text = (edt.Month - sdt.Month).ToString()+ " Month";
             textBox2Year.Text = (edt.Year - sdt.Year).ToString() +" Years";
-
+            textBox1Hours.Text = (edt - sdt).TotalHours.ToString() + " Hours";
 
             //int days = ts.Days;
             //int months = 0;

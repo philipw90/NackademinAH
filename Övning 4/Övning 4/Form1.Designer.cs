@@ -38,6 +38,7 @@
             this.textBox2Year = new System.Windows.Forms.TextBox();
             this.textBox3Days = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.textBox1Hours = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,6 +59,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.textBox1Hours);
             this.panel1.Controls.Add(this.textBox2Year);
             this.panel1.Controls.Add(this.textBox3Days);
             this.panel1.Controls.Add(this.textBox1Month);
@@ -97,7 +99,7 @@
             // 
             // textBox1Month
             // 
-            this.textBox1Month.Location = new System.Drawing.Point(301, 166);
+            this.textBox1Month.Location = new System.Drawing.Point(239, 166);
             this.textBox1Month.Name = "textBox1Month";
             this.textBox1Month.Size = new System.Drawing.Size(100, 29);
             this.textBox1Month.TabIndex = 0;
@@ -111,7 +113,7 @@
             // 
             // textBox3Days
             // 
-            this.textBox3Days.Location = new System.Drawing.Point(497, 166);
+            this.textBox3Days.Location = new System.Drawing.Point(414, 166);
             this.textBox3Days.Name = "textBox3Days";
             this.textBox3Days.Size = new System.Drawing.Size(100, 29);
             this.textBox3Days.TabIndex = 7;
@@ -125,6 +127,13 @@
             this.button1.Text = "Generate";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBox1Hours
+            // 
+            this.textBox1Hours.Location = new System.Drawing.Point(580, 166);
+            this.textBox1Hours.Name = "textBox1Hours";
+            this.textBox1Hours.Size = new System.Drawing.Size(100, 29);
+            this.textBox1Hours.TabIndex = 8;
             // 
             // Form1
             // 
@@ -160,6 +169,7 @@
         private System.Windows.Forms.TextBox textBox3Days;
         private System.Windows.Forms.TextBox textBox1Month;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox1Hours;
     }
 }
 
