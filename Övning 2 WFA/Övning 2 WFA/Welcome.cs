@@ -24,7 +24,12 @@ namespace Övning_2_WFA
         {
 
             lblWelcome.Text = WelcomeMessage;
-            //lblWelcome.Text = "Welcome" + Text;
+            lblWelcome.Text = @"Welcome" + Text;
+
+        }
+
+        private void Welcome_Load(object sender, EventArgs e)
+        {
 
         }
     }
