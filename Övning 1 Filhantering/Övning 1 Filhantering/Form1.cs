@@ -23,7 +23,7 @@ namespace Övning_1_Filhantering
 
             string text = textBox1.Text;
 
-            System.IO.StreamWriter file = new System.IO.StreamWriter("c:\\Projects\\FromVS.txt");
+            StreamWriter file = new StreamWriter("c:\\Projects\\FromVS.txt");
             file.WriteLine(text);
 
             file.Close();
@@ -31,7 +31,7 @@ namespace Övning_1_Filhantering
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string text = System.IO.File.ReadAllText(@"C:\projects\FromVS.txt");
+            string text = File.ReadAllText(@"C:\projects\FromVS.txt");
 
 
             textBox2.Text = text;
