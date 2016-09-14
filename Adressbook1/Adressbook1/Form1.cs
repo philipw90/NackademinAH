@@ -43,14 +43,9 @@ namespace Adressbook1
                               "\\Address Book - Andre\\settings.txt";
             using (StreamWriter saveToFile = new StreamWriter(saveInfo))
             {
-
-
-                foreach (var contacts in contact)               
-                {
-                    saveToFile.WriteLine(contacts.ToString());
+                
+                    saveToFile.WriteLine(contact.);
                     saveToFile.Close();
-                }
-
                 
             }
 
