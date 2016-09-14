@@ -60,6 +60,9 @@ namespace OOP2
 
         private void btnCalculatePoints_Click(object sender, EventArgs e)
         {
+            Course.startDate = dtpStartDate.Value;
+            Course.endDate = dtpEndDate.Value;
+
             Course.points = int.Parse(txtCoursePoints.Text);
             MessageBox.Show("Antal poäng per dag: " + Course.PointsPerCourseDay());
         }

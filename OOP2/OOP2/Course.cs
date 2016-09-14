@@ -16,8 +16,8 @@ namespace OOP2
 
         public double CalculateCourseLength()
         {
-            return Convert.ToInt32((endDate - startDate).TotalDays);
-            
+            return Convert.ToInt32((endDate - startDate).TotalDays +1);
+
         }
 
         public double PointsPerCourseDay()

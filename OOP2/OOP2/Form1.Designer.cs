@@ -44,72 +44,77 @@
             // lblCourseName
             // 
             this.lblCourseName.AutoSize = true;
-            this.lblCourseName.Location = new System.Drawing.Point(13, 53);
+            this.lblCourseName.Location = new System.Drawing.Point(15, 66);
             this.lblCourseName.Name = "lblCourseName";
-            this.lblCourseName.Size = new System.Drawing.Size(72, 17);
+            this.lblCourseName.Size = new System.Drawing.Size(81, 20);
             this.lblCourseName.TabIndex = 0;
             this.lblCourseName.Text = "Kursnamn";
             // 
             // lblEndDate
             // 
             this.lblEndDate.AutoSize = true;
-            this.lblEndDate.Location = new System.Drawing.Point(13, 241);
+            this.lblEndDate.Location = new System.Drawing.Point(15, 301);
             this.lblEndDate.Name = "lblEndDate";
-            this.lblEndDate.Size = new System.Drawing.Size(73, 17);
+            this.lblEndDate.Size = new System.Drawing.Size(85, 20);
             this.lblEndDate.TabIndex = 1;
             this.lblEndDate.Text = "SlutDatum";
             // 
             // lblStartDate
             // 
             this.lblStartDate.AutoSize = true;
-            this.lblStartDate.Location = new System.Drawing.Point(13, 182);
+            this.lblStartDate.Location = new System.Drawing.Point(15, 228);
             this.lblStartDate.Name = "lblStartDate";
-            this.lblStartDate.Size = new System.Drawing.Size(77, 17);
+            this.lblStartDate.Size = new System.Drawing.Size(89, 20);
             this.lblStartDate.TabIndex = 2;
             this.lblStartDate.Text = "Startdatum";
             // 
             // lblCoursePoints
             // 
             this.lblCoursePoints.AutoSize = true;
-            this.lblCoursePoints.Location = new System.Drawing.Point(13, 120);
+            this.lblCoursePoints.Location = new System.Drawing.Point(15, 150);
             this.lblCoursePoints.Name = "lblCoursePoints";
-            this.lblCoursePoints.Size = new System.Drawing.Size(77, 17);
+            this.lblCoursePoints.Size = new System.Drawing.Size(86, 20);
             this.lblCoursePoints.TabIndex = 3;
             this.lblCoursePoints.Text = "Kurspoäng";
             // 
             // txtCourseName
             // 
-            this.txtCourseName.Location = new System.Drawing.Point(92, 53);
+            this.txtCourseName.Location = new System.Drawing.Point(104, 66);
+            this.txtCourseName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCourseName.Name = "txtCourseName";
-            this.txtCourseName.Size = new System.Drawing.Size(200, 22);
+            this.txtCourseName.Size = new System.Drawing.Size(224, 26);
             this.txtCourseName.TabIndex = 4;
             // 
             // txtCoursePoints
             // 
-            this.txtCoursePoints.Location = new System.Drawing.Point(92, 120);
+            this.txtCoursePoints.Location = new System.Drawing.Point(104, 150);
+            this.txtCoursePoints.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCoursePoints.Name = "txtCoursePoints";
-            this.txtCoursePoints.Size = new System.Drawing.Size(200, 22);
+            this.txtCoursePoints.Size = new System.Drawing.Size(224, 26);
             this.txtCoursePoints.TabIndex = 7;
             // 
             // dtpStartDate
             // 
-            this.dtpStartDate.Location = new System.Drawing.Point(92, 182);
+            this.dtpStartDate.Location = new System.Drawing.Point(104, 228);
+            this.dtpStartDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpStartDate.Name = "dtpStartDate";
-            this.dtpStartDate.Size = new System.Drawing.Size(200, 22);
+            this.dtpStartDate.Size = new System.Drawing.Size(224, 26);
             this.dtpStartDate.TabIndex = 8;
             // 
             // dtpEndDate
             // 
-            this.dtpEndDate.Location = new System.Drawing.Point(92, 241);
+            this.dtpEndDate.Location = new System.Drawing.Point(104, 301);
+            this.dtpEndDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpEndDate.Name = "dtpEndDate";
-            this.dtpEndDate.Size = new System.Drawing.Size(200, 22);
+            this.dtpEndDate.Size = new System.Drawing.Size(224, 26);
             this.dtpEndDate.TabIndex = 9;
             // 
             // btnShow
             // 
-            this.btnShow.Location = new System.Drawing.Point(7, 303);
+            this.btnShow.Location = new System.Drawing.Point(8, 379);
+            this.btnShow.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnShow.Name = "btnShow";
-            this.btnShow.Size = new System.Drawing.Size(115, 33);
+            this.btnShow.Size = new System.Drawing.Size(129, 41);
             this.btnShow.TabIndex = 10;
             this.btnShow.Text = "Visa";
             this.btnShow.UseVisualStyleBackColor = true;
@@ -117,9 +122,10 @@
             // 
             // btnCalculatePoints
             // 
-            this.btnCalculatePoints.Location = new System.Drawing.Point(128, 303);
+            this.btnCalculatePoints.Location = new System.Drawing.Point(144, 379);
+            this.btnCalculatePoints.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCalculatePoints.Name = "btnCalculatePoints";
-            this.btnCalculatePoints.Size = new System.Drawing.Size(115, 33);
+            this.btnCalculatePoints.Size = new System.Drawing.Size(180, 41);
             this.btnCalculatePoints.TabIndex = 11;
             this.btnCalculatePoints.Text = "Beräkna poäng";
             this.btnCalculatePoints.UseVisualStyleBackColor = true;
@@ -127,9 +133,10 @@
             // 
             // Calculate
             // 
-            this.Calculate.Location = new System.Drawing.Point(249, 303);
+            this.Calculate.Location = new System.Drawing.Point(330, 379);
+            this.Calculate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Calculate.Name = "Calculate";
-            this.Calculate.Size = new System.Drawing.Size(115, 33);
+            this.Calculate.Size = new System.Drawing.Size(129, 41);
             this.Calculate.TabIndex = 12;
             this.Calculate.Text = "Beräkna";
             this.Calculate.UseVisualStyleBackColor = true;
@@ -137,9 +144,9 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(371, 362);
+            this.ClientSize = new System.Drawing.Size(462, 502);
             this.Controls.Add(this.Calculate);
             this.Controls.Add(this.btnCalculatePoints);
             this.Controls.Add(this.btnShow);
@@ -151,6 +158,7 @@
             this.Controls.Add(this.lblStartDate);
             this.Controls.Add(this.lblEndDate);
             this.Controls.Add(this.lblCourseName);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
