@@ -43,40 +43,39 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.txtBoxSearch = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.buttonAddContact = new System.Windows.Forms.Button();
             this.buttonRemove = new System.Windows.Forms.Button();
             this.buttonSearch = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblname
             // 
             this.lblname.AutoSize = true;
-            this.lblname.Location = new System.Drawing.Point(10, 23);
-            this.lblname.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblname.Location = new System.Drawing.Point(12, 28);
+            this.lblname.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblname.Name = "lblname";
-            this.lblname.Size = new System.Drawing.Size(51, 20);
+            this.lblname.Size = new System.Drawing.Size(64, 25);
             this.lblname.TabIndex = 0;
             this.lblname.Text = "Name";
             // 
             // lblStreet
             // 
             this.lblStreet.AutoSize = true;
-            this.lblStreet.Location = new System.Drawing.Point(295, 23);
-            this.lblStreet.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblStreet.Location = new System.Drawing.Point(361, 28);
+            this.lblStreet.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblStreet.Name = "lblStreet";
-            this.lblStreet.Size = new System.Drawing.Size(53, 20);
+            this.lblStreet.Size = new System.Drawing.Size(64, 25);
             this.lblStreet.TabIndex = 1;
             this.lblStreet.Text = "Street";
             // 
             // lblZipCode
             // 
             this.lblZipCode.AutoSize = true;
-            this.lblZipCode.Location = new System.Drawing.Point(14, 83);
-            this.lblZipCode.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblZipCode.Location = new System.Drawing.Point(17, 100);
+            this.lblZipCode.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblZipCode.Name = "lblZipCode";
-            this.lblZipCode.Size = new System.Drawing.Size(73, 20);
+            this.lblZipCode.Size = new System.Drawing.Size(92, 25);
             this.lblZipCode.TabIndex = 2;
             this.lblZipCode.Text = "Zip Code";
             this.lblZipCode.Click += new System.EventHandler(this.lblZipCode_Click);
@@ -84,10 +83,10 @@
             // lblCity
             // 
             this.lblCity.AutoSize = true;
-            this.lblCity.Location = new System.Drawing.Point(299, 83);
-            this.lblCity.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblCity.Location = new System.Drawing.Point(365, 100);
+            this.lblCity.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblCity.Name = "lblCity";
-            this.lblCity.Size = new System.Drawing.Size(35, 20);
+            this.lblCity.Size = new System.Drawing.Size(46, 25);
             this.lblCity.TabIndex = 3;
             this.lblCity.Text = "City";
             this.lblCity.Click += new System.EventHandler(this.lblCity_Click);
@@ -95,81 +94,81 @@
             // lblPhoneNumber
             // 
             this.lblPhoneNumber.AutoSize = true;
-            this.lblPhoneNumber.Location = new System.Drawing.Point(10, 143);
-            this.lblPhoneNumber.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblPhoneNumber.Location = new System.Drawing.Point(12, 172);
+            this.lblPhoneNumber.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblPhoneNumber.Name = "lblPhoneNumber";
-            this.lblPhoneNumber.Size = new System.Drawing.Size(115, 20);
+            this.lblPhoneNumber.Size = new System.Drawing.Size(143, 25);
             this.lblPhoneNumber.TabIndex = 4;
             this.lblPhoneNumber.Text = "Phone Number";
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(299, 143);
-            this.lblEmail.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblEmail.Location = new System.Drawing.Point(365, 172);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(48, 20);
+            this.lblEmail.Size = new System.Drawing.Size(60, 25);
             this.lblEmail.TabIndex = 5;
             this.lblEmail.Text = "Email";
             // 
             // txtBoxName
             // 
-            this.txtBoxName.Location = new System.Drawing.Point(14, 47);
-            this.txtBoxName.Margin = new System.Windows.Forms.Padding(5);
+            this.txtBoxName.Location = new System.Drawing.Point(17, 56);
+            this.txtBoxName.Margin = new System.Windows.Forms.Padding(6);
             this.txtBoxName.Name = "txtBoxName";
-            this.txtBoxName.Size = new System.Drawing.Size(250, 26);
+            this.txtBoxName.Size = new System.Drawing.Size(305, 29);
             this.txtBoxName.TabIndex = 6;
             // 
             // txtBoxStreet
             // 
-            this.txtBoxStreet.Location = new System.Drawing.Point(299, 47);
-            this.txtBoxStreet.Margin = new System.Windows.Forms.Padding(5);
+            this.txtBoxStreet.Location = new System.Drawing.Point(365, 56);
+            this.txtBoxStreet.Margin = new System.Windows.Forms.Padding(6);
             this.txtBoxStreet.Name = "txtBoxStreet";
-            this.txtBoxStreet.Size = new System.Drawing.Size(250, 26);
+            this.txtBoxStreet.Size = new System.Drawing.Size(305, 29);
             this.txtBoxStreet.TabIndex = 7;
             // 
             // txtBoxZipCode
             // 
-            this.txtBoxZipCode.Location = new System.Drawing.Point(14, 107);
-            this.txtBoxZipCode.Margin = new System.Windows.Forms.Padding(5);
+            this.txtBoxZipCode.Location = new System.Drawing.Point(17, 128);
+            this.txtBoxZipCode.Margin = new System.Windows.Forms.Padding(6);
             this.txtBoxZipCode.Name = "txtBoxZipCode";
-            this.txtBoxZipCode.Size = new System.Drawing.Size(250, 26);
+            this.txtBoxZipCode.Size = new System.Drawing.Size(305, 29);
             this.txtBoxZipCode.TabIndex = 8;
             this.txtBoxZipCode.TextChanged += new System.EventHandler(this.txtBoxZipCode_TextChanged);
             // 
             // txtBoxEmail
             // 
-            this.txtBoxEmail.Location = new System.Drawing.Point(299, 167);
-            this.txtBoxEmail.Margin = new System.Windows.Forms.Padding(5);
+            this.txtBoxEmail.Location = new System.Drawing.Point(365, 200);
+            this.txtBoxEmail.Margin = new System.Windows.Forms.Padding(6);
             this.txtBoxEmail.Name = "txtBoxEmail";
-            this.txtBoxEmail.Size = new System.Drawing.Size(250, 26);
+            this.txtBoxEmail.Size = new System.Drawing.Size(305, 29);
             this.txtBoxEmail.TabIndex = 11;
             this.txtBoxEmail.TextChanged += new System.EventHandler(this.txtBoxEmail_TextChanged);
             // 
             // txtBoxPhone
             // 
-            this.txtBoxPhone.Location = new System.Drawing.Point(14, 167);
-            this.txtBoxPhone.Margin = new System.Windows.Forms.Padding(5);
+            this.txtBoxPhone.Location = new System.Drawing.Point(17, 200);
+            this.txtBoxPhone.Margin = new System.Windows.Forms.Padding(6);
             this.txtBoxPhone.Name = "txtBoxPhone";
-            this.txtBoxPhone.Size = new System.Drawing.Size(250, 26);
+            this.txtBoxPhone.Size = new System.Drawing.Size(305, 29);
             this.txtBoxPhone.TabIndex = 10;
             this.txtBoxPhone.TextChanged += new System.EventHandler(this.txtBoxPhone_TextChanged);
             // 
             // txtBoxCity
             // 
-            this.txtBoxCity.Location = new System.Drawing.Point(299, 107);
-            this.txtBoxCity.Margin = new System.Windows.Forms.Padding(5);
+            this.txtBoxCity.Location = new System.Drawing.Point(365, 128);
+            this.txtBoxCity.Margin = new System.Windows.Forms.Padding(6);
             this.txtBoxCity.Name = "txtBoxCity";
-            this.txtBoxCity.Size = new System.Drawing.Size(250, 26);
+            this.txtBoxCity.Size = new System.Drawing.Size(305, 29);
             this.txtBoxCity.TabIndex = 9;
             this.txtBoxCity.TextChanged += new System.EventHandler(this.txtBoxCity_TextChanged);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(439, 207);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(5);
+            this.btnSave.Location = new System.Drawing.Point(537, 248);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(6);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(113, 35);
+            this.btnSave.Size = new System.Drawing.Size(138, 42);
             this.btnSave.TabIndex = 12;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -177,16 +176,15 @@
             // 
             // txtBoxSearch
             // 
-            this.txtBoxSearch.Location = new System.Drawing.Point(660, 77);
-            this.txtBoxSearch.Margin = new System.Windows.Forms.Padding(5);
+            this.txtBoxSearch.Location = new System.Drawing.Point(807, 92);
+            this.txtBoxSearch.Margin = new System.Windows.Forms.Padding(6);
             this.txtBoxSearch.Name = "txtBoxSearch";
-            this.txtBoxSearch.Size = new System.Drawing.Size(193, 26);
+            this.txtBoxSearch.Size = new System.Drawing.Size(235, 29);
             this.txtBoxSearch.TabIndex = 13;
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.buttonAddContact);
             this.groupBox1.Controls.Add(this.buttonRemove);
             this.groupBox1.Controls.Add(this.lblname);
             this.groupBox1.Controls.Add(this.lblStreet);
@@ -201,33 +199,22 @@
             this.groupBox1.Controls.Add(this.txtBoxName);
             this.groupBox1.Controls.Add(this.txtBoxZipCode);
             this.groupBox1.Controls.Add(this.txtBoxStreet);
-            this.groupBox1.Location = new System.Drawing.Point(12, 72);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(5);
+            this.groupBox1.Location = new System.Drawing.Point(15, 86);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(5);
-            this.groupBox1.Size = new System.Drawing.Size(590, 295);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(6);
+            this.groupBox1.Size = new System.Drawing.Size(721, 354);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Contact Info";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // buttonAddContact
-            // 
-            this.buttonAddContact.Location = new System.Drawing.Point(193, 207);
-            this.buttonAddContact.Margin = new System.Windows.Forms.Padding(5);
-            this.buttonAddContact.Name = "buttonAddContact";
-            this.buttonAddContact.Size = new System.Drawing.Size(113, 35);
-            this.buttonAddContact.TabIndex = 14;
-            this.buttonAddContact.Text = "Add Contact";
-            this.buttonAddContact.UseVisualStyleBackColor = true;
-            this.buttonAddContact.Click += new System.EventHandler(this.buttonAddContact_Click);
-            // 
             // buttonRemove
             // 
-            this.buttonRemove.Location = new System.Drawing.Point(316, 207);
-            this.buttonRemove.Margin = new System.Windows.Forms.Padding(5);
+            this.buttonRemove.Location = new System.Drawing.Point(386, 248);
+            this.buttonRemove.Margin = new System.Windows.Forms.Padding(6);
             this.buttonRemove.Name = "buttonRemove";
-            this.buttonRemove.Size = new System.Drawing.Size(113, 35);
+            this.buttonRemove.Size = new System.Drawing.Size(138, 42);
             this.buttonRemove.TabIndex = 13;
             this.buttonRemove.Text = "Remove";
             this.buttonRemove.UseVisualStyleBackColor = true;
@@ -235,36 +222,36 @@
             // 
             // buttonSearch
             // 
-            this.buttonSearch.Location = new System.Drawing.Point(863, 77);
-            this.buttonSearch.Margin = new System.Windows.Forms.Padding(5);
+            this.buttonSearch.Location = new System.Drawing.Point(1055, 87);
+            this.buttonSearch.Margin = new System.Windows.Forms.Padding(6);
             this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(70, 26);
+            this.buttonSearch.Size = new System.Drawing.Size(103, 41);
             this.buttonSearch.TabIndex = 17;
             this.buttonSearch.Text = "Search";
             this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
-            // listView1
+            // listBox1
             // 
-            this.listView1.Alignment = System.Windows.Forms.ListViewAlignment.Left;
-            this.listView1.Location = new System.Drawing.Point(660, 119);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(273, 248);
-            this.listView1.TabIndex = 18;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.List;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 24;
+            this.listBox1.Location = new System.Drawing.Point(807, 148);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(351, 292);
+            this.listBox1.TabIndex = 18;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1175, 567);
-            this.Controls.Add(this.listView1);
+            this.ClientSize = new System.Drawing.Size(1436, 680);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtBoxSearch);
-            this.Margin = new System.Windows.Forms.Padding(9);
+            this.Margin = new System.Windows.Forms.Padding(11);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -292,10 +279,9 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.TextBox txtBoxSearch;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button buttonAddContact;
         private System.Windows.Forms.Button buttonRemove;
         private System.Windows.Forms.Button buttonSearch;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Odbc;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,45 +11,33 @@ using System.Windows.Forms;
 using Adressbook1.User;
 using System.IO;
 using System.Runtime.CompilerServices;
+using Adressbook1.Constants;
 
 namespace Adressbook1
 {
     public partial class Form1 : Form
     {
+        Database database = new Database();
+        Search search = new Search();
+        List<Contact> resultUser = new List<Contact>();
+        List<Contact> resultStreet = new List<Contact>();
+
         public Form1()
         {
             InitializeComponent();
         }
-        List<Contacts> contact = new List<Contacts>();
-
         private void Form1_Load(object sender, EventArgs e)
         {
-
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            if (!Directory.Exists(path + "\\Adress Book - Andre"))
-            {
-                Directory.CreateDirectory(path + "\\Address Book - Andre");
-            }
-            if (!File.Exists(path + "\\Address Book - Andre\\settings.xml"))
-            {
-                File.Create(path + "\\Address Book - Andre\\settings.xml");
-            }
-
 
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string saveInfo = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) +
-                              "\\Address Book - Andre\\settings.txt";
-            using (StreamWriter saveToFile = new StreamWriter(saveInfo))
-            {
-                
-                    saveToFile.WriteLine(contact.);
-                    saveToFile.Close();
-                
-            }
+            Contact contact = new Contact();
+            contact.UserImput(txtBoxName.Text,txtBoxStreet.Text,txtBoxZipCode.Text,txtBoxCity.Text,txtBoxPhone.Text,txtBoxEmail.Text);
 
+            Database save = new Database();
+            save.SaveToFile(contact);
         }
 
         private void lblZipCode_Click(object sender, EventArgs e)
@@ -78,23 +67,7 @@ namespace Adressbook1
 
         private void txtBoxPhone_TextChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                txtBoxName.Text = contact[listView1.SelectedItems[0].Index].UserName;
-                txtBoxStreet.Text = contact[listView1.SelectedItems[0].Index].UserStreet;
-                txtBoxZipCode.Text = contact[listView1.SelectedItems[0].Index].UserZipCode;
-                txtBoxCity.Text = contact[listView1.SelectedItems[0].Index].UserCity;
-                txtBoxPhone.Text = contact[listView1.SelectedItems[0].Index].UserPhoneNr;
-                txtBoxEmail.Text = contact[listView1.SelectedItems[0].Index].UserEmail;
-            }
-            catch {}
-
-
+            
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -104,36 +77,35 @@ namespace Adressbook1
 
         private void buttonRemove_Click(object sender, EventArgs e)
         {
-            try
-            {
-                listView1.Items.Remove(listView1.SelectedItems[0]);
-                contact.RemoveAt(listView1.SelectedItems[0].Index);
-            }
-            catch { }
+
+
+
         }
 
-        private void buttonAddContact_Click(object sender, EventArgs e)
+        private void buttonSearch_Click(object sender, EventArgs e)
         {
-            Contacts newUser = new Contacts();
-            newUser.UserName = txtBoxName.Text;
-            newUser.UserStreet = txtBoxStreet.Text;
-            newUser.UserZipCode = txtBoxZipCode.Text;
-            newUser.UserCity = txtBoxCity.Text;
-            newUser.UserPhoneNr = txtBoxPhone.Text;
-            newUser.UserEmail = txtBoxEmail.Text;
-            contact.Add(newUser);
 
-            listView1.Items.Add(newUser.UserName);
-            txtBoxName.Text = "";
-            txtBoxStreet.Text = "";
-            txtBoxZipCode.Text = "";
-            txtBoxCity.Text = "";
-            txtBoxPhone.Text = "";
-            txtBoxEmail.Text = "";
+            resultUser = search.SearchName(txtBoxSearch.Text.ToLower());
+            listBox1.DataSource = resultUser;
+            listBox1.DisplayMember = "UserName";
 
+            resultStreet = search.SearchStreet(txtBoxSearch.Text.ToLower());
+            listBox1.DataSource = resultStreet;
+            listBox1.DisplayMember = "UserStreet";
 
+        }
 
+        public void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+            var contact = (Contact)listBox1.SelectedItem;
+
+            txtBoxName.Text = contact.UserName;
+            txtBoxStreet.Text = contact.UserStreet;
+            txtBoxZipCode.Text = contact.UserZipCode;
+            txtBoxCity.Text = contact.UserCity;
+            txtBoxPhone.Text = contact.UserPhoneNr;
+            txtBoxEmail.Text = contact.UserEmail;
         }
     }
 
