@@ -91,8 +91,11 @@ namespace Adressbook1
         {
             
             var contactId = HttpRuntime.Cache["CONTACT_ID"] as string;
+            Database.DeleteContact(contactId);
+            listBox1.DataSource = new List<Contact>();
+            ClearTextbox();
             
-            //Database.DeleteContact(contactId);
+
 
         }
 
@@ -116,10 +119,6 @@ namespace Adressbook1
             listBox1.DataSource = searchResult;
             listBox1.DisplayMember = "UserName";
 
-            //resultUser = search.SearchName(txtBoxSearch.Text.ToLower());
-            //resultStreet = search.SearchName(txtBoxSearch.Text.ToLower());
-            //listBox1.DataSource = resultStreet;
-            //listBox1.DisplayMember = "UserStreet";
 
         }
 
@@ -147,6 +146,8 @@ namespace Adressbook1
             txtBoxPhone.Clear();
             txtBoxStreet.Clear();
             txtBoxZipCode.Clear();
+            listBox1.ClearSelected();
+            txtBoxSearch.Clear();
         }
     }
 
