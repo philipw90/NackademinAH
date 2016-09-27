@@ -13,7 +13,8 @@ namespace Shotgun.Game_Mechanics
         public int playerAmmo = 0;
         public int aiAmmo = 0;
         public string result;
-        public bool winResult;
+        public int playerPoints = 0;
+        public int aiPoints = 0;
         // Comp Actions
         // 1 = Ladda
         // 2 = Block
@@ -75,19 +76,19 @@ namespace Shotgun.Game_Mechanics
                 else if (CompRandomNumber() == 3)
                 {
                     result = "Player reloaded, AI shoot and won";
-                    winResult = true;
+                    aiPoints++;
                 }
                 else
                 {
-                    result = "Player reloaded, Ai won using shotgun";
-                    winResult = true;
+                    result = "Player reloaded, AI won using shotgun";
+                    aiPoints++;
                 }
             }
             if (playersChoice == 2) //Block
             {
                 if (CompRandomNumber() == 1)
                 {
-                    result = "Player blocked, Ai reload";
+                    result = "Player blocked, AI reload";
                     aiAmmo++;
                 }
                 else if (CompRandomNumber() == 2)
@@ -102,8 +103,8 @@ namespace Shotgun.Game_Mechanics
                 }
                 else
                 {
-                    result = "Player blocked, Ai won using shotgun";
-                    winResult = true;
+                    result = "Player blocked, AI won using shotgun";
+                    aiPoints++;
                 }
             }
             if (playersChoice == 3) //Skjut
@@ -111,13 +112,13 @@ namespace Shotgun.Game_Mechanics
                 if (CompRandomNumber() == 1)
                 {
                     playerAmmo--;
-                    result = "Player shoot, Ai reloaded";
-                    winResult = false;
+                    result = "Player shoot, AI reloaded";
+                    playerPoints++;
                 }
                 else if (CompRandomNumber() == 2)
                 {
                     playerAmmo--;
-                    result = "Player shoot, Ai block";
+                    result = "Player shoot, AI block";
                 }
                 else if (CompRandomNumber() == 3)
                 {
@@ -128,7 +129,7 @@ namespace Shotgun.Game_Mechanics
                 else
                 {
                     result = "Player shoot but Ai won using shotgun";
-                    winResult = true;
+                    aiPoints++;
                 }
             }
             if (playersChoice == 4) //Shotgun
@@ -140,7 +141,7 @@ namespace Shotgun.Game_Mechanics
                 else
                 {
                     result = "You won using shotgun";
-                    winResult = false;
+                    playerPoints++;
                 }
             }
         }
@@ -164,20 +165,30 @@ namespace Shotgun.Game_Mechanics
             
         }
 
-        public bool WinScenario()
+        public int WinScenario()
         {
-            string aiWon = "Ai won!";
-            string playerWon = "Player Won!";
-
-            if (winResult != true)
+            if (aiPoints >= 1)
             {
-                return ToString(aiWon);
+                return 1;
             }
-            else if (winResult = false)
+            if (playerPoints>=1)
             {
-                MessageBox.Show("Dinner dinner cheicken winer");
+                return 2;
             }
-
+            return 3;
+        }
+        public void PlayAgain()
+        {
+            DialogResult playAgain = MessageBox.Show("Do you want to play again?", "", MessageBoxButtons.YesNo);
+            if (playAgain == DialogResult.Yes)
+            {
+                System.Diagnostics.Process.Start(Application.ExecutablePath);
+                Application.Exit();
+            }
+            else if (playAgain == DialogResult.No)
+            {
+                Application.Exit();
+            }
         }
     }
 }

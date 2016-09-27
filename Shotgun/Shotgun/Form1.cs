@@ -73,7 +73,17 @@ namespace Shotgun
             lblShowAction.Text = _gameMechanics.ShowResult();
             btnShotgun.Visible = _gameMechanics.EnableShotgun();
             btnShoot.Visible = _gameMechanics.EnableFire();
-            MessageBox.Show(_gameMechanics.WinScenario());
+
+            if (_gameMechanics.WinScenario()==1)
+            {
+                MessageBox.Show("AI has won!!");
+                _gameMechanics.PlayAgain();
+            }
+            else if (_gameMechanics.WinScenario()==2)
+            {
+                MessageBox.Show("Player has won!!");
+                _gameMechanics.PlayAgain();
+            }
 
         }
 

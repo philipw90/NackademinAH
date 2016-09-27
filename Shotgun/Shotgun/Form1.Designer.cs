@@ -48,7 +48,7 @@
             // 
             // btnShoot
             // 
-            this.btnShoot.Location = new System.Drawing.Point(93, 672);
+            this.btnShoot.Location = new System.Drawing.Point(90, 748);
             this.btnShoot.Name = "btnShoot";
             this.btnShoot.Size = new System.Drawing.Size(107, 109);
             this.btnShoot.TabIndex = 0;
@@ -58,7 +58,7 @@
             // 
             // btnReload
             // 
-            this.btnReload.Location = new System.Drawing.Point(318, 672);
+            this.btnReload.Location = new System.Drawing.Point(315, 748);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(107, 109);
             this.btnReload.TabIndex = 1;
@@ -68,7 +68,7 @@
             // 
             // btnBlock
             // 
-            this.btnBlock.Location = new System.Drawing.Point(535, 672);
+            this.btnBlock.Location = new System.Drawing.Point(532, 748);
             this.btnBlock.Name = "btnBlock";
             this.btnBlock.Size = new System.Drawing.Size(107, 109);
             this.btnBlock.TabIndex = 2;
@@ -118,7 +118,7 @@
             // 
             // btnShotgun
             // 
-            this.btnShotgun.Location = new System.Drawing.Point(93, 527);
+            this.btnShotgun.Location = new System.Drawing.Point(90, 603);
             this.btnShotgun.Name = "btnShotgun";
             this.btnShotgun.Size = new System.Drawing.Size(557, 99);
             this.btnShotgun.TabIndex = 10;
@@ -161,7 +161,7 @@
             // 
             this.lblShowAction.AutoSize = true;
             this.lblShowAction.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShowAction.Location = new System.Drawing.Point(820, 442);
+            this.lblShowAction.Location = new System.Drawing.Point(830, 765);
             this.lblShowAction.Name = "lblShowAction";
             this.lblShowAction.Size = new System.Drawing.Size(101, 54);
             this.lblShowAction.TabIndex = 14;
