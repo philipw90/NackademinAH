@@ -17,21 +17,15 @@ using Adressbook1.Constants;
 namespace Adressbook1
 {
     public partial class Form1 : Form
-    {
-        
-        
+    {       
         Database database = new Database();
-        Search search = new Search();
+        //Search search = new Search();
         List<Contact> resultUser = new List<Contact>();
         List<Contact> resultStreet = new List<Contact>();
         List<Contact> _book;
-   
-
-
         public Form1()
         {
             InitializeComponent();
-
             database = new Database();
             _book = database.GetFile();
         }
@@ -88,29 +82,26 @@ namespace Adressbook1
         }
 
         private void buttonRemove_Click(object sender, EventArgs e)
-        {
-            
+        {           
             var contactId = HttpRuntime.Cache["CONTACT_ID"] as string;
             Database.DeleteContact(contactId);
             listBox1.DataSource = new List<Contact>();
             ClearTextbox();
-            
-
-
+            txtBoxSearch.Focus();
         }
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-            string searchName = txtBoxSearch.Text.ToLower();
+            string searchText = txtBoxSearch.Text.ToLower();
             List<Contact> searchResult = new List<Contact>();
 
             foreach (var contact in _book)
             {
-                if (contact.UserName.Contains(searchName))
+                if (contact.UserName.Contains(searchText))
                 {
                     searchResult.Add(contact);
                 }
-                if (contact.UserStreet.Contains(searchName))
+                if (contact.UserStreet.Contains(searchText))
                 {
                     searchResult.Add(contact);
                 }
@@ -118,7 +109,6 @@ namespace Adressbook1
 
             listBox1.DataSource = searchResult;
             listBox1.DisplayMember = "UserName";
-
 
         }
 
