@@ -11,21 +11,32 @@ using System.Windows.Forms;
 using Adressbook1.User;
 using System.IO;
 using System.Runtime.CompilerServices;
+using System.Web;
 using Adressbook1.Constants;
 
 namespace Adressbook1
 {
     public partial class Form1 : Form
     {
+        
+        
         Database database = new Database();
         Search search = new Search();
         List<Contact> resultUser = new List<Contact>();
         List<Contact> resultStreet = new List<Contact>();
+        List<Contact> _book;
+   
+
 
         public Form1()
         {
             InitializeComponent();
+
+            database = new Database();
+            _book = database.GetFile();
         }
+
+
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -38,6 +49,7 @@ namespace Adressbook1
 
             Database save = new Database();
             save.SaveToFile(contact);
+            ClearTextbox();
         }
 
         private void lblZipCode_Click(object sender, EventArgs e)
@@ -77,21 +89,37 @@ namespace Adressbook1
 
         private void buttonRemove_Click(object sender, EventArgs e)
         {
-
-
+            
+            var contactId = HttpRuntime.Cache["CONTACT_ID"] as string;
+            
+            //Database.DeleteContact(contactId);
 
         }
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
+            string searchName = txtBoxSearch.Text.ToLower();
+            List<Contact> searchResult = new List<Contact>();
 
-            resultUser = search.SearchName(txtBoxSearch.Text.ToLower());
-            listBox1.DataSource = resultUser;
+            foreach (var contact in _book)
+            {
+                if (contact.UserName.Contains(searchName))
+                {
+                    searchResult.Add(contact);
+                }
+                if (contact.UserStreet.Contains(searchName))
+                {
+                    searchResult.Add(contact);
+                }
+            }
+
+            listBox1.DataSource = searchResult;
             listBox1.DisplayMember = "UserName";
 
-            resultStreet = search.SearchStreet(txtBoxSearch.Text.ToLower());
-            listBox1.DataSource = resultStreet;
-            listBox1.DisplayMember = "UserStreet";
+            //resultUser = search.SearchName(txtBoxSearch.Text.ToLower());
+            //resultStreet = search.SearchName(txtBoxSearch.Text.ToLower());
+            //listBox1.DataSource = resultStreet;
+            //listBox1.DisplayMember = "UserStreet";
 
         }
 
@@ -106,6 +134,19 @@ namespace Adressbook1
             txtBoxCity.Text = contact.UserCity;
             txtBoxPhone.Text = contact.UserPhoneNr;
             txtBoxEmail.Text = contact.UserEmail;
+            //id = contact.Id;
+
+            HttpRuntime.Cache.Insert("CONTACT_ID", contact.Id);
+
+        }
+        public void ClearTextbox()
+        {
+            txtBoxCity.Clear();
+            txtBoxEmail.Clear();
+            txtBoxName.Clear();
+            txtBoxPhone.Clear();
+            txtBoxStreet.Clear();
+            txtBoxZipCode.Clear();
         }
     }
 

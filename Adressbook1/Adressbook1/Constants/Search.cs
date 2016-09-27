@@ -20,30 +20,34 @@ namespace Adressbook1.Constants
             book = database.GetFile();
         }
 
-        public List<Contact> SearchName(string name)
-        {
-            List<Contact> searchResult = new List<Contact>();
-            foreach (var contact in book)
-            {
-                if (contact.UserName.Contains(name))
-                {
-                    searchResult.Add(contact);
-                }
-            }
-            return searchResult;
-        }
+        //public List<Contact> SearchName(string name)
+        //{
+        //    List<Contact> searchResult = new List<Contact>();
+        //    foreach (var contact in book)
+        //    {
+        //        if (contact.UserName.Contains(name))
+        //        {
+        //            searchResult.Add(contact);
+        //        }
+        //        if (contact.UserStreet.Contains(name))
+        //        {
+        //            searchResult.Add(contact);
+        //        }
+        //    }
+        //    return searchResult;
+        //}
 
-        public List<Contact> SearchStreet(string name)
-        {
-            List<Contact> searchResult = new List<Contact>();
-            foreach (var contact in book)
-            {
-                if (contact.UserStreet.Contains(name))
-                {
-                    searchResult.Add(contact);
-                }
-            }
-            return searchResult;
-        }
+        //public List<Contact> SearchStreet(string name)
+        //{
+        //    List<Contact> searchResult = new List<Contact>();
+        //    foreach (var contact in book)
+        //    {
+        //        if (contact.UserStreet.Contains(name))
+        //        {
+        //            searchResult.Add(contact);
+        //        }
+        //    }
+        //    return searchResult;
+        //}
     }
 }

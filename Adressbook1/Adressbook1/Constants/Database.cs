@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using Adressbook1.User;
 
@@ -7,7 +8,7 @@ namespace Adressbook1.Constants
 {
    public class Database
    {
-        string path = @"C:\Projects\Adressbook.txt";
+        static string path = @"C:\Projects\Adressbook.txt";
 
         public void SaveToFile(Contact contact)
        {
@@ -52,14 +53,37 @@ namespace Adressbook1.Constants
                             UserEmail = values[5],
                             Id = values[6]
                         };
-
-
                         contacts.Add(contact);
                     }
                 }
 
                 return contacts;
             }
+
         }
+        public static void DeleteContact(string contactId)
+        {
+            var lines = File.ReadAllLines(path);
+            var line = 0;
+
+            for (var i = 0; i < lines.Length; i++)
+            {
+                if (lines[i].Contains(contactId))
+                {
+                    line = i;
+                }
+            }
+
+            RemoveLine(path, line);
+        }
+
+       public static void RemoveLine(string fileName, int lineToRemove)
+       {
+           var arrLine = File.ReadAllLines(fileName).ToList();
+            arrLine.RemoveAt(lineToRemove);
+
+            File.WriteAllLines(fileName, arrLine);
+
+       }
     }
 }
