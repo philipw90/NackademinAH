@@ -8,11 +8,10 @@ namespace Adressbook1.Constants
 {
    public class Database
    {
-        static string path = @"C:\Projects\Adressbook.txt";
+        static string pathToTextFile = @"C:\Projects\Adressbook.txt";
 
         public void SaveToFile(Contact contact)
-       {
-            
+       {         
             StringBuilder stringBuilder = new StringBuilder();
 
             stringBuilder.Append(contact.UserName.ToLower() +",");
@@ -23,7 +22,7 @@ namespace Adressbook1.Constants
             stringBuilder.Append(contact.UserEmail.ToLower() + ",");
             stringBuilder.Append(contact.Id.ToLower() + ",");
 
-           using (StreamWriter sw = new StreamWriter(path, true))
+           using (StreamWriter sw = new StreamWriter(pathToTextFile, true))
            {
                sw.WriteLine(stringBuilder);
            }
@@ -31,8 +30,7 @@ namespace Adressbook1.Constants
 
         public List<Contact> GetFile()
         {
-
-            using (var streamReader = new StreamReader(path))
+            using (var streamReader = new StreamReader(pathToTextFile))
             {
                 var contacts = new List<Contact>();
 
@@ -56,14 +54,13 @@ namespace Adressbook1.Constants
                         contacts.Add(contact);
                     }
                 }
-
                 return contacts;
             }
-
         }
+
         public static void DeleteContact(string contactId)
         {
-            var lines = File.ReadAllLines(path);
+            var lines = File.ReadAllLines(pathToTextFile);
             var line = 0;
 
             for (var i = 0; i < lines.Length; i++)
@@ -74,7 +71,7 @@ namespace Adressbook1.Constants
                 }
             }
 
-            RemoveLine(path, line);
+            RemoveLine(pathToTextFile, line);
         }
 
        public static void RemoveLine(string fileName, int lineToRemove)
@@ -83,7 +80,6 @@ namespace Adressbook1.Constants
             arrLine.RemoveAt(lineToRemove);
 
             File.WriteAllLines(fileName, arrLine);
-
        }
     }
 }

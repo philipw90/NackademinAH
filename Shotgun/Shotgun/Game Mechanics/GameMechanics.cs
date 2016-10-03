@@ -15,6 +15,7 @@ namespace Shotgun.Game_Mechanics
         public string result;
         public int playerPoints = 0;
         public int aiPoints = 0;
+
         // Comp Actions
         // 1 = Ladda
         // 2 = Block
@@ -35,20 +36,18 @@ namespace Shotgun.Game_Mechanics
             return aiAmmo;
         }
 
-
         public int CompRandomNumber()
         {
             int aiChoice = 1;
+            Random random = new Random();
 
             if (aiAmmo == 0)
             {
-                Random first = new Random();
-                aiChoice = first.Next(1, 3);
+                aiChoice = random.Next(1, 3);
             }
             else if (aiAmmo > 0 && aiAmmo < 3)
             {
-                Random second = new Random();
-                aiChoice = second.Next(1, 4);
+                aiChoice = random.Next(1, 4);
             }
             else if (aiAmmo == 3)
             {
@@ -60,7 +59,8 @@ namespace Shotgun.Game_Mechanics
 
         public void GameScenario(int playersChoice)
         {
-            if (playersChoice == 1) //Ladda
+            //Ladda
+            if (playersChoice == 1) 
             {
                 if (CompRandomNumber() == 1)
                 {
@@ -84,6 +84,7 @@ namespace Shotgun.Game_Mechanics
                     aiPoints++;
                 }
             }
+
             if (playersChoice == 2) //Block
             {
                 if (CompRandomNumber() == 1)
@@ -99,7 +100,6 @@ namespace Shotgun.Game_Mechanics
                 {
                     aiAmmo--;
                     result = "Player blocked, and AI Shoot";
-       
                 }
                 else
                 {
@@ -107,7 +107,9 @@ namespace Shotgun.Game_Mechanics
                     aiPoints++;
                 }
             }
-            if (playersChoice == 3) //Skjut
+            
+            //Skjut
+            if (playersChoice == 3) 
             {
                 if (CompRandomNumber() == 1)
                 {
@@ -132,7 +134,9 @@ namespace Shotgun.Game_Mechanics
                     aiPoints++;
                 }
             }
-            if (playersChoice == 4) //Shotgun
+            
+            //Shotgun
+            if (playersChoice == 4)
             {
                 if (CompRandomNumber() == 4)
                 {
@@ -152,6 +156,7 @@ namespace Shotgun.Game_Mechanics
             {
                 return true;
             }
+
             return false;
         }
 
@@ -161,8 +166,8 @@ namespace Shotgun.Game_Mechanics
             {
                 return true;
             }
-                return false;
-            
+
+            return false;
         }
 
         public int WinScenario()
@@ -171,15 +176,19 @@ namespace Shotgun.Game_Mechanics
             {
                 return 1;
             }
+
             if (playerPoints>=1)
             {
                 return 2;
             }
+
             return 3;
         }
+
         public void PlayAgain()
         {
             DialogResult playAgain = MessageBox.Show("Do you want to play again?", "", MessageBoxButtons.YesNo);
+
             if (playAgain == DialogResult.Yes)
             {
                 System.Diagnostics.Process.Start(Application.ExecutablePath);
@@ -192,6 +201,3 @@ namespace Shotgun.Game_Mechanics
         }
     }
 }
-
-
-

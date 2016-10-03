@@ -78,7 +78,6 @@
             this.lblZipCode.Size = new System.Drawing.Size(92, 25);
             this.lblZipCode.TabIndex = 2;
             this.lblZipCode.Text = "Zip Code";
-            this.lblZipCode.Click += new System.EventHandler(this.lblZipCode_Click);
             // 
             // lblCity
             // 
@@ -89,7 +88,6 @@
             this.lblCity.Size = new System.Drawing.Size(46, 25);
             this.lblCity.TabIndex = 3;
             this.lblCity.Text = "City";
-            this.lblCity.Click += new System.EventHandler(this.lblCity_Click);
             // 
             // lblPhoneNumber
             // 
@@ -118,6 +116,7 @@
             this.txtBoxName.Name = "txtBoxName";
             this.txtBoxName.Size = new System.Drawing.Size(305, 29);
             this.txtBoxName.TabIndex = 6;
+            this.txtBoxName.TextChanged += new System.EventHandler(this.txtBoxName_TextChanged);
             // 
             // txtBoxStreet
             // 
@@ -126,6 +125,7 @@
             this.txtBoxStreet.Name = "txtBoxStreet";
             this.txtBoxStreet.Size = new System.Drawing.Size(305, 29);
             this.txtBoxStreet.TabIndex = 7;
+            this.txtBoxStreet.TextChanged += new System.EventHandler(this.txtBoxStreet_TextChanged);
             // 
             // txtBoxZipCode
             // 
@@ -207,7 +207,6 @@
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Contact Info";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // buttonRemove
             // 
