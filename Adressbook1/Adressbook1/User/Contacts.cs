@@ -24,8 +24,6 @@ namespace Adressbook1.User
 
         public string Id { get; set; }
 
-
-
         public void UserImput(string name, string street, string zipcode, string city, string phonenr, string email)
         {
             UserName = name;
@@ -35,8 +33,7 @@ namespace Adressbook1.User
             UserPhoneNr = phonenr;
             UserEmail = email;
             Id = Guid.NewGuid().ToString();
-
-                      
+            
         }
     }
    

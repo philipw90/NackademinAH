@@ -8,6 +8,7 @@ namespace InheritanceProject
 {
     class Chicken : Animal
     {
+        public int eggProduction;
         public Chicken(string _name, int _age)
         {
             name = _name;
@@ -21,8 +22,20 @@ namespace InheritanceProject
         {
             age++;
             if (age < 8)
-                return true;
-            return false;
+            {
+                return alive = true;
+            }
+            else
+            {
+                return alive = false;
+            }
+            
         }
+
+        public override int CalculateYearProduction()
+        {
+            return eggProduction + 10;
+        }
+
     }
 }

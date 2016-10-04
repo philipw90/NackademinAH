@@ -46,6 +46,7 @@
             this.buttonRemove = new System.Windows.Forms.Button();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lblContact = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -165,12 +166,12 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(537, 248);
+            this.btnSave.Location = new System.Drawing.Point(515, 248);
             this.btnSave.Margin = new System.Windows.Forms.Padding(6);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(138, 42);
+            this.btnSave.Size = new System.Drawing.Size(160, 42);
             this.btnSave.TabIndex = 12;
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "New/Update";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -210,7 +211,7 @@
             // 
             // buttonRemove
             // 
-            this.buttonRemove.Location = new System.Drawing.Point(386, 248);
+            this.buttonRemove.Location = new System.Drawing.Point(365, 248);
             this.buttonRemove.Margin = new System.Windows.Forms.Padding(6);
             this.buttonRemove.Name = "buttonRemove";
             this.buttonRemove.Size = new System.Drawing.Size(138, 42);
@@ -240,12 +241,21 @@
             this.listBox1.TabIndex = 18;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
+            // lblContact
+            // 
+            this.lblContact.AutoSize = true;
+            this.lblContact.Location = new System.Drawing.Point(807, 503);
+            this.lblContact.Name = "lblContact";
+            this.lblContact.Size = new System.Drawing.Size(0, 25);
+            this.lblContact.TabIndex = 19;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1436, 680);
+            this.Controls.Add(this.lblContact);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.groupBox1);
@@ -281,6 +291,7 @@
         private System.Windows.Forms.Button buttonRemove;
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Label lblContact;
     }
 }
 

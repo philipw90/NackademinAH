@@ -42,6 +42,9 @@
             this.textBoxNameChicken = new System.Windows.Forms.TextBox();
             this.lblAnimalsOnFarm = new System.Windows.Forms.Label();
             this.lblnfoOfAnimal = new System.Windows.Forms.Label();
+            this.lblDeadAnimals = new System.Windows.Forms.Label();
+            this.lblAnimalsAlive = new System.Windows.Forms.Label();
+            this.btnNextYear = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -151,9 +154,9 @@
             this.lblAnimalsOnFarm.AutoSize = true;
             this.lblAnimalsOnFarm.Location = new System.Drawing.Point(79, 469);
             this.lblAnimalsOnFarm.Name = "lblAnimalsOnFarm";
-            this.lblAnimalsOnFarm.Size = new System.Drawing.Size(187, 25);
+            this.lblAnimalsOnFarm.Size = new System.Drawing.Size(184, 25);
             this.lblAnimalsOnFarm.TabIndex = 12;
-            this.lblAnimalsOnFarm.Text = "Antal djur på gården";
+            this.lblAnimalsOnFarm.Text = "Animals on the farm";
             this.lblAnimalsOnFarm.Click += new System.EventHandler(this.lblAnimalsOnFarm_Click);
             // 
             // lblnfoOfAnimal
@@ -161,15 +164,47 @@
             this.lblnfoOfAnimal.AutoSize = true;
             this.lblnfoOfAnimal.Location = new System.Drawing.Point(79, 553);
             this.lblnfoOfAnimal.Name = "lblnfoOfAnimal";
-            this.lblnfoOfAnimal.Size = new System.Drawing.Size(135, 25);
+            this.lblnfoOfAnimal.Size = new System.Drawing.Size(93, 25);
             this.lblnfoOfAnimal.TabIndex = 13;
-            this.lblnfoOfAnimal.Text = "Info om djuren";
+            this.lblnfoOfAnimal.Text = "Farm info";
+            // 
+            // lblDeadAnimals
+            // 
+            this.lblDeadAnimals.AutoSize = true;
+            this.lblDeadAnimals.Location = new System.Drawing.Point(425, 469);
+            this.lblDeadAnimals.Name = "lblDeadAnimals";
+            this.lblDeadAnimals.Size = new System.Drawing.Size(131, 25);
+            this.lblDeadAnimals.TabIndex = 14;
+            this.lblDeadAnimals.Text = "Dead animals";
+      
+            // 
+            // lblAnimalsAlive
+            // 
+            this.lblAnimalsAlive.AutoSize = true;
+            this.lblAnimalsAlive.Location = new System.Drawing.Point(425, 554);
+            this.lblAnimalsAlive.Name = "lblAnimalsAlive";
+            this.lblAnimalsAlive.Size = new System.Drawing.Size(138, 25);
+            this.lblAnimalsAlive.TabIndex = 15;
+            this.lblAnimalsAlive.Text = "Alaive animals";
+            // 
+            // btnNextYear
+            // 
+            this.btnNextYear.Location = new System.Drawing.Point(79, 645);
+            this.btnNextYear.Name = "btnNextYear";
+            this.btnNextYear.Size = new System.Drawing.Size(127, 89);
+            this.btnNextYear.TabIndex = 16;
+            this.btnNextYear.Text = "Next year";
+            this.btnNextYear.UseVisualStyleBackColor = true;
+            this.btnNextYear.Click += new System.EventHandler(this.btnNextYear_Click);
             // 
             // FormAnimalFarm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1005, 812);
+            this.ClientSize = new System.Drawing.Size(1018, 856);
+            this.Controls.Add(this.btnNextYear);
+            this.Controls.Add(this.lblAnimalsAlive);
+            this.Controls.Add(this.lblDeadAnimals);
             this.Controls.Add(this.lblnfoOfAnimal);
             this.Controls.Add(this.lblAnimalsOnFarm);
             this.Controls.Add(this.textBoxNameChicken);
@@ -184,7 +219,7 @@
             this.Controls.Add(this.buttonBuyCow);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FormAnimalFarm";
             this.Text = "FormAnimalFarm";
             this.Load += new System.EventHandler(this.FormAnimalFarm_Load);
@@ -209,5 +244,8 @@
         private System.Windows.Forms.TextBox textBoxNameChicken;
         private System.Windows.Forms.Label lblAnimalsOnFarm;
         private System.Windows.Forms.Label lblnfoOfAnimal;
+        private System.Windows.Forms.Label lblDeadAnimals;
+        private System.Windows.Forms.Label lblAnimalsAlive;
+        private System.Windows.Forms.Button btnNextYear;
     }
 }

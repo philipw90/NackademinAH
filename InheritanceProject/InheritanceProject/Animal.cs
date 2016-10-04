@@ -10,6 +10,7 @@ namespace InheritanceProject
     {
         protected string name;
         protected int age;
+        public bool alive = true;
 
         public string Name
         {
@@ -19,7 +20,8 @@ namespace InheritanceProject
         {
             get { return age; }
         }
-
         public abstract bool HaveBirthday();
+
+        public abstract int CalculateYearProduction();
     }
 }
