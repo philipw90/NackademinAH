@@ -18,10 +18,12 @@ namespace InheritanceProject
 
         public FormAnimalFarm()
         {
-            this.deadAnimals = deadAnimals;
+            
             InitializeComponent();
             animals = new List<Animal>();
             deadAnimals = new List<Animal>();
+            var cowPrice = 100;
+            var chickenPrice = 100;
         }
 
         private void CreateNewChicken(string name, int age)
@@ -87,7 +89,7 @@ namespace InheritanceProject
 
         private void btnNextYear_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Poop");
+            
             for (int i = 0; i < animals.Count; i++)
             {
                 animals[i].HaveBirthday();

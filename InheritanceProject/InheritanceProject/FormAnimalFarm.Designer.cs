@@ -45,6 +45,9 @@
             this.lblDeadAnimals = new System.Windows.Forms.Label();
             this.lblAnimalsAlive = new System.Windows.Forms.Label();
             this.btnNextYear = new System.Windows.Forms.Button();
+            this.lblEgg = new System.Windows.Forms.Label();
+            this.lblMilkL = new System.Windows.Forms.Label();
+            this.lblCash = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -176,7 +179,6 @@
             this.lblDeadAnimals.Size = new System.Drawing.Size(131, 25);
             this.lblDeadAnimals.TabIndex = 14;
             this.lblDeadAnimals.Text = "Dead animals";
-      
             // 
             // lblAnimalsAlive
             // 
@@ -197,11 +199,41 @@
             this.btnNextYear.UseVisualStyleBackColor = true;
             this.btnNextYear.Click += new System.EventHandler(this.btnNextYear_Click);
             // 
+            // lblEgg
+            // 
+            this.lblEgg.AutoSize = true;
+            this.lblEgg.Location = new System.Drawing.Point(498, 645);
+            this.lblEgg.Name = "lblEgg";
+            this.lblEgg.Size = new System.Drawing.Size(48, 25);
+            this.lblEgg.TabIndex = 17;
+            this.lblEgg.Text = "Ägg";
+            // 
+            // lblMilkL
+            // 
+            this.lblMilkL.AutoSize = true;
+            this.lblMilkL.Location = new System.Drawing.Point(498, 709);
+            this.lblMilkL.Name = "lblMilkL";
+            this.lblMilkL.Size = new System.Drawing.Size(100, 25);
+            this.lblMilkL.TabIndex = 18;
+            this.lblMilkL.Text = "Liter Mjölk";
+            // 
+            // lblCash
+            // 
+            this.lblCash.AutoSize = true;
+            this.lblCash.Location = new System.Drawing.Point(498, 764);
+            this.lblCash.Name = "lblCash";
+            this.lblCash.Size = new System.Drawing.Size(59, 25);
+            this.lblCash.TabIndex = 20;
+            this.lblCash.Text = "Cash";
+            // 
             // FormAnimalFarm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1018, 856);
+            this.Controls.Add(this.lblCash);
+            this.Controls.Add(this.lblMilkL);
+            this.Controls.Add(this.lblEgg);
             this.Controls.Add(this.btnNextYear);
             this.Controls.Add(this.lblAnimalsAlive);
             this.Controls.Add(this.lblDeadAnimals);
@@ -247,5 +279,8 @@
         private System.Windows.Forms.Label lblDeadAnimals;
         private System.Windows.Forms.Label lblAnimalsAlive;
         private System.Windows.Forms.Button btnNextYear;
+        private System.Windows.Forms.Label lblEgg;
+        private System.Windows.Forms.Label lblMilkL;
+        private System.Windows.Forms.Label lblCash;
     }
 }

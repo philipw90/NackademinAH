@@ -11,11 +11,11 @@ namespace ConsoleApplication1
     {
         private static void Main(string[] args)
         {
-            //string myString = "Detta är min sträng";
-            //var i = myString.Split(' ').Length;
-            //Console.WriteLine(i);
+            string myString = "Detta är min sträng";
+            var i = myString.Split(' ').Length;
+            Console.WriteLine(i);
 
-           // Uppgift 2
+            // Uppgift 2
 
             //string myString = "Detta är min andra sträng";
 
@@ -28,23 +28,26 @@ namespace ConsoleApplication1
             //Uppgift 3
 
 
-            string myString = "Detta är min tredje sträng";
-            var x = CheckIfContainsLetter(myString);
+            //    string myString = "Detta är min tredje sträng";
+            //    var x = CheckIfContainsLetter(myString);
 
-            Console.WriteLine(x);
-        }
+            //    Console.WriteLine(x);
+            //}
 
-        static public bool CheckIfContainsLetter(this string myString)
-        {
-            if (myString.Contains("t"))
-            {
-                return true;
-            }
-            return false;
+            //static public bool CheckIfContainsLetter(this string myString)
+            //{
+            //    if (myString.Contains("t"))
+            //    {
+            //        return true;
+            //    }
+            //    return false;
         }
 
         // Vid extentionmetoder så måste metoden vara static och this måste vara inparameter.
-    }
+       // static var convertTostring = new TryCatch().ConvertStringToInt("g");
+
+
+
     }
 
 }

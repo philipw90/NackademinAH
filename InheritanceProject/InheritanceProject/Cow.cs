@@ -34,7 +34,9 @@ namespace InheritanceProject
 
         public override int CalculateYearProduction()
         {
-            return milkProduction + 10;
+            Random random = new Random();
+            milkProduction = random.Next(100, 200);
+            return milkProduction;
         }
     }
 }

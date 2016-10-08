@@ -60,7 +60,7 @@ namespace Shotgun.Game_Mechanics
         public void GameScenario(int playersChoice)
         {
             //Ladda
-            if (playersChoice == 1) 
+            if (playersChoice == 1)
             {
                 if (CompRandomNumber() == 1)
                 {
@@ -107,9 +107,9 @@ namespace Shotgun.Game_Mechanics
                     aiPoints++;
                 }
             }
-            
+
             //Skjut
-            if (playersChoice == 3) 
+            if (playersChoice == 3)
             {
                 if (CompRandomNumber() == 1)
                 {
@@ -134,7 +134,7 @@ namespace Shotgun.Game_Mechanics
                     aiPoints++;
                 }
             }
-            
+
             //Shotgun
             if (playersChoice == 4)
             {
@@ -177,7 +177,7 @@ namespace Shotgun.Game_Mechanics
                 return 1;
             }
 
-            if (playerPoints>=1)
+            if (playerPoints >= 1)
             {
                 return 2;
             }

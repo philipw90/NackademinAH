@@ -34,7 +34,9 @@ namespace InheritanceProject
 
         public override int CalculateYearProduction()
         {
-            return eggProduction + 10;
+            Random random = new Random();
+            eggProduction = random.Next(40, 100);
+            return eggProduction;
         }
 
     }

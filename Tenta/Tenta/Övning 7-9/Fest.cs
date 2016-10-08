@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Tenta
 {
     // Övning 7-9
-    //public abstract class Fest
-    //{
+    public abstract class Fest
+    {
     //    public string Namn { get; set; }
     //    public string Beskrivning { get; set; }
     //    public DateTime StartTid { get; set; }
@@ -44,6 +45,19 @@ namespace Tenta
 
     //    public abstract double Inträde();
 
-    }
+    
 
+
+        // Övningsuppgift
+
+        
+
+
+
+        
+
+
+
+
+ }   
 }
