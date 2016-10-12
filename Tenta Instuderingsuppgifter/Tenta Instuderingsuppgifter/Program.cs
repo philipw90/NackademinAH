@@ -276,8 +276,54 @@ namespace Tenta_Instuderingsuppgifter
             //        return -1;
             //    }
 
+            //List<int> integers = new List<int>() { 1978, 1959, 1960, 1958, 1962, 1980, 1945, 1985, 1954, 1968 };
+
+            //var a = integers.Where(x => DateTime.Now.Year - x >= 50 && DateTime.Now.Year - x <= 60).OrderBy(x => x).First();
+
+            //Console.WriteLine(a);
+
+
+            //    LINQ - frågor
+
+            // Sortera efter bokstavsordning
+            // Räkna antal ”a”
+            // Räkna antal tecken
+            // Räkna antal ord
+            // Räkna antal versaler
+            // Sortera efter bokstavsordning ”aaaaBdE….”
+            // Skriv ut alla namn i en sträng
+            // Spegelvänd strängen
+
+
+            //string[] names = { "maTilda", "BEa", "iSa" };
+            
+            //var sortedByAlpha = names.OrderBy(x => x);
+
+            //var countLetterA = string.Join("", names).Count(x => x == 'a');
+
+            //var countLetter = string.Join("", names).Count();
+
+            //var countWords = names.Count();
+
+            //var countCapitalLetters = string.Join(" ",names).Count(x => char.IsUpper(x));
+
+            //var sortStringByAlpha = string.Join("", names).OrderBy(x => x.ToString()).ToArray();
+
+            //var arraytoString = string.Join(" ", names);
+
+            //var reverseStringVer2 = string.Join(" ", names).Reverse().ToArray();
+
+            //Console.WriteLine(reverseStringVer2);
+
+
+
+
+
+
+
+
         }
 
     }
-    }
+}
 

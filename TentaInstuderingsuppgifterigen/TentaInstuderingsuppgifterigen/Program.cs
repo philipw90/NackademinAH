@@ -132,158 +132,158 @@ namespace TentaInstuderingsuppgifterigen
             // Övning 7
             //Skapa en metod Plusminus som tar emot två tal samt returnerar både summan och skillnaden av talen.
 
-            //    int diffrence;          
+//    int diffrence;          
 
-            //    Console.WriteLine(PlusMinus(10, 13, out diffrence) + "    " + diffrence);
-
-
-            //}
-
-            //public static int PlusMinus(int value1, int value2, out int diffrence)
-            //{
+//    Console.WriteLine(PlusMinus(10, 13, out diffrence) + "    " + diffrence);
 
 
-            //    var sum = value1 + value2;
+//}
 
-            //    diffrence = Math.Abs(value1 - value2);
-
-            //    return sum;
-
-            //    //return "Summan är: " + sum + " Och skillnaden är: " + diffrence;
-
-            // Övning 8
-
-            //Ta bort alla dubletter i arrayen {11,11,12,12,13,13,14,15,16} och skapa en ny array utan dubletter
-
-            //int[] myArray =  new int[] { 11, 11, 12, 12, 13, 13, 14, 15, 16 };
-
-            //var newArray = myArray.Distinct().ToArray();
-
-            //foreach (var item in newArray)
-            //{
-            //    Console.WriteLine(item);
-            //}
-
-            // Övning 9
-
-            // Hur många tal mellan 1-1000 är jämt delbara med 17? Ange kod + antal 
-
-            //int numbers = 0;
-
-            //for (int i = 1; i < 1000; i++)
-            //{
-            //    if (i % 17 ==0)
-            //    {
-            //        numbers++;
-            //    }
-            //}
-            //Console.WriteLine(numbers);
-
-            //Övning 10
-
-            // Skriv en default och en överlagrad konstruktor till klassen Bil som sätter värden på
-            // alla properties i klassen. En Bil har ett regnr en årsmodell och ett märke. Det skall
-            // även gå att skapa en instans utan att sätta properties direkt.
+//public static int PlusMinus(int value1, int value2, out int diffrence)
+//{
 
 
-            // Se bil class
+//    var sum = value1 + value2;
 
-            //Övning 11
+//    diffrence = Math.Abs(value1 - value2);
 
-            //. Gör ett program där användaren får mata in en mening t ex ”Detta är min text som
-            // jag matar in”. Programmet skall räkna ut hur många ord meningen består av och
-            // meddela användaren om detta.Ta också fram hur många ord som innehåller bokstaven a. 
+//    return sum;
 
+//    //return "Summan är: " + sum + " Och skillnaden är: " + diffrence;
 
-            //    Console.WriteLine("Mata in en sträng");
-            //    Console.WriteLine(CountWordsAndLetters(Console.ReadLine()));
+// Övning 8
 
-            //}
+//Ta bort alla dubletter i arrayen {11,11,12,12,13,13,14,15,16} och skapa en ny array utan dubletter
 
+//int[] myArray =  new int[] { 11, 11, 12, 12, 13, 13, 14, 15, 16 };
 
-            //public static string CountWordsAndLetters(string input)
-            //{
-            //    var myString = input;
+//var newArray = myArray.Distinct().ToArray();
 
-            //    var word = myString.Split(' ').Count();
+//foreach (var item in newArray)
+//{
+//    Console.WriteLine(item);
+//}
 
-            //    var letters = myString.Count(x => x == 'a');
+// Övning 9
 
-            //    return " Din stäng innehåller " + word + " ord och " + letters + " antal a ";
+// Hur många tal mellan 1-1000 är jämt delbara med 17? Ange kod + antal 
 
-            // Övning 12
+//int numbers = 0;
 
-            // Skapa en metod som du döper till HittaSträngar. Metoden skall ta som inparameter en array med strängar.
-            // Metoden skall returnera både den längsta strängen och denkortaste strängen som finns i arrayen. 
+//for (int i = 1; i < 1000; i++)
+//{
+//    if (i % 17 ==0)
+//    {
+//        numbers++;
+//    }
+//}
+//Console.WriteLine(numbers);
 
+//Övning 10
 
-            //    string[] MrArray = new[] { "Detta är en sträng loooonnnggg som fan", "det är en array", " detta ","dan", "hbiatchaaaasie", "i" };
-
-            //    Console.WriteLine(HittaSträngar(MrArray));
-            //}
-
-
-            //public static string HittaSträngar(string[] myArray)
-            //{
-            //    return "Den längsta strängen är: " + myArray.OrderBy(x => x.Length).Last() + " Och den kortaste är:  " + myArray.OrderBy(x => x.Length).First();
-
-            //}
-
-            // Övning 13
-
-            // Skapa en klass som heter Person. En person har ett namn och en adress och ett
-            // telefonnummer.Skapa två klasser som ärver från Person, Kund och Instruktör.En Kund har
-            // även egenskapen abonnemang och en Instruktör har en lön. Alla personer måste ha en
-            // metod som heter BokaTräningspass, men detta skall fungera olika i klasserna. Visa med kod hur detta görs. 
+// Skriv en default och en överlagrad konstruktor till klassen Bil som sätter värden på
+// alla properties i klassen. En Bil har ett regnr en årsmodell och ett märke. Det skall
+// även gå att skapa en instans utan att sätta properties direkt.
 
 
-            // Övning 14 se class Person, Kund, Instruktör
+// Se bil class
 
-            //Du har följande: string: string s= "Flygande beckasiner söka whila på mjuka tufvor"; . Skapa
-            //en metod SortString som returnerar en ny sträng där alla orden kommer sorterade i bokstavsordning.
+//Övning 11
+
+//. Gör ett program där användaren får mata in en mening t ex ”Detta är min text som
+// jag matar in”. Programmet skall räkna ut hur många ord meningen består av och
+// meddela användaren om detta.Ta också fram hur många ord som innehåller bokstaven a. 
 
 
-            //    Console.WriteLine(SortString());
-            //}
+//    Console.WriteLine("Mata in en sträng");
+//    Console.WriteLine(CountWordsAndLetters(Console.ReadLine()));
 
-            //public static string SortString()
-            //{
-            //   string s= "Flygande beckasiner söka whila på mjuka tufvor";
+//}
 
-            //    StringBuilder stringBuilder = new StringBuilder();
 
-            //    var splitedString = s.Split(' ');
+//public static string CountWordsAndLetters(string input)
+//{
+//    var myString = input;
 
-            //    var sorted = splitedString.OrderBy(x => x);
+//    var word = myString.Split(' ').Count();
 
-            //    foreach (var sortwords in sorted)
-            //    {
-            //        stringBuilder.Append(sortwords + " ");
-            //    }
+//    var letters = myString.Count(x => x == 'a');
 
-            //    return stringBuilder.ToString();
+//    return " Din stäng innehåller " + word + " ord och " + letters + " antal a ";
 
-            //}
+// Övning 12
 
-            // Övning 15
+// Skapa en metod som du döper till HittaSträngar. Metoden skall ta som inparameter en array med strängar.
+// Metoden skall returnera både den längsta strängen och denkortaste strängen som finns i arrayen. 
 
-            // Skapa en ny lista utifrån denna sträng array. Där skall alla namnen vara sorterade på
-            // efternamn i bokstavsordning.Detta skall göra med LINQ eller lambda uttryck. 
 
-            //string[] namnLista = { "Karl Folkesson", "Sven Karlsson", "Greta Blom", "Lisa Lind" };
+//    string[] MrArray = new[] { "Detta är en sträng loooonnnggg som fan", "det är en array", " detta ","dan", "hbiatchaaaasie", "i" };
 
-            //var sortedList = namnLista.OrderBy(x => x.ElementAt(x.IndexOf(' ') + 1)).ToList();
+//    Console.WriteLine(HittaSträngar(MrArray));
+//}
 
-            //foreach (var names in sortedList)
-            //{
-            //    Console.WriteLine(names);
-            //}
 
-            // Övning 18
-            // . Du har två metoder Start() och Beräkna(). Från Start() skall du anropa Beräkna() och skicka
-            //med strängarna varde1 och varde2 som inparametrar.I Beräkna() kontrollerar du om varde1
-            //och varde2 är tal.Om de är tal multiplicerar du talen och returnerar dem som en double.Om
-            //de inte är tal returnerar du - 1.
+//public static string HittaSträngar(string[] myArray)
+//{
+//    return "Den längsta strängen är: " + myArray.OrderBy(x => x.Length).Last() + " Och den kortaste är:  " + myArray.OrderBy(x => x.Length).First();
+
+//}
+
+// Övning 13
+
+// Skapa en klass som heter Person. En person har ett namn och en adress och ett
+// telefonnummer.Skapa två klasser som ärver från Person, Kund och Instruktör.En Kund har
+// även egenskapen abonnemang och en Instruktör har en lön. Alla personer måste ha en
+// metod som heter BokaTräningspass, men detta skall fungera olika i klasserna. Visa med kod hur detta görs. 
+
+
+// Övning 14 se class Person, Kund, Instruktör
+
+//Du har följande: string: string s= "Flygande beckasiner söka whila på mjuka tufvor"; . Skapa
+//en metod SortString som returnerar en ny sträng där alla orden kommer sorterade i bokstavsordning.
+
+
+//    Console.WriteLine(SortString());
+//}
+
+//public static string SortString()
+//{
+//   string s= "Flygande beckasiner söka whila på mjuka tufvor";
+
+//    StringBuilder stringBuilder = new StringBuilder();
+
+//    var splitedString = s.Split(' ');
+
+//    var sorted = splitedString.OrderBy(x => x);
+
+//    foreach (var sortwords in sorted)
+//    {
+//        stringBuilder.Append(sortwords + " ");
+//    }
+
+//    return stringBuilder.ToString();
+
+//}
+
+// Övning 15
+
+// Skapa en ny lista utifrån denna sträng array. Där skall alla namnen vara sorterade på
+// efternamn i bokstavsordning.Detta skall göra med LINQ eller lambda uttryck. 
+
+//string[] namnLista = { "Karl Folkesson", "Sven Karlsson", "Greta Blom", "Lisa Lind" };
+
+//var sortedList = namnLista.OrderBy(x => x.ElementAt(x.IndexOf(' ') + 1)).ToList();
+
+//foreach (var names in sortedList)
+//{
+//    Console.WriteLine(names);
+//}
+
+// Övning 18
+// . Du har två metoder Start() och Beräkna(). Från Start() skall du anropa Beräkna() och skicka
+//med strängarna varde1 och varde2 som inparametrar.I Beräkna() kontrollerar du om varde1
+//och varde2 är tal.Om de är tal multiplicerar du talen och returnerar dem som en double.Om
+//de inte är tal returnerar du - 1.
 //            Start();
 
 //        }
@@ -312,7 +312,7 @@ namespace TentaInstuderingsuppgifterigen
 //        }
 
 //    }
-    
+
 //}
 
 

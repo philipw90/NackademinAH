@@ -45,7 +45,7 @@ namespace TentaInstuderingsuppgifter_Pizza
             order.Pizzor.Add(vesuvio);
             order.Pizzor.Add(capriciosa);
 
-            var pris = order.Pizzor.Sum(Pizza => Pizza.Pris);
+            var pris = order.Pizzor.Sum(x => x.Pris);
 
             Console.WriteLine(pris);
 
