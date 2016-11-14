@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4edcb7d2d0c44def9d8a07b3480cdbc4" Name="Diagram1">
+        <EntityTypeShape EntityType="SkolaModel.Avdelning" Width="1.5" PointX="1.5" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SkolaModel.BetygConvert" Width="1.5" PointX="5.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SkolaModel.BetygVarde" Width="1.5" PointX="3" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SkolaModel.Elev" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SkolaModel.Klass" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SkolaModel.Kurs" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SkolaModel.KursBetyg" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SkolaModel.KursLokal" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SkolaModel.Larare" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SkolaModel.Lokal" Width="1.5" PointX="3" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SkolaModel.TidigareElev" Width="1.5" PointX="7.75" PointY="2.625" IsExpanded="true" />
+        <AssociationConnector Association="SkolaModel.FK_Larare_Avdelning" ManuallyRouted="false" />
+        <AssociationConnector Association="SkolaModel.FK_KursBetyg_Betyg" ManuallyRouted="false" />
+        <AssociationConnector Association="SkolaModel.FK_Elev_Klass" ManuallyRouted="false" />
+        <AssociationConnector Association="SkolaModel.FK_Kursbetyg_Elev" ManuallyRouted="false" />
+        <AssociationConnector Association="SkolaModel.FK_Kursbetyg_Kurs" ManuallyRouted="false" />
+        <AssociationConnector Association="SkolaModel.FK_KursLokal_Kurs" ManuallyRouted="false" />
+        <AssociationConnector Association="SkolaModel.FK_KursLokal_Lokal" ManuallyRouted="false" />
+        <AssociationConnector Association="SkolaModel.KlassKurs" ManuallyRouted="false" />
+        <AssociationConnector Association="SkolaModel.Undervisar" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

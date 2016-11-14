@@ -1,0 +1,742 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SkolaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Avdelning">
+          <Key>
+            <PropertyRef Name="Avdelningsnummer" />
+          </Key>
+          <Property Name="Avdelningsnummer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Namn" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BetygConvert">
+          <Key>
+            <PropertyRef Name="Betyg" />
+          </Key>
+          <Property Name="Betyg" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Poäng" Type="int" />
+        </EntityType>
+        <EntityType Name="BetygVarde">
+          <Key>
+            <PropertyRef Name="Betyg" />
+          </Key>
+          <Property Name="Betyg" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="Varde" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Elev">
+          <Key>
+            <PropertyRef Name="Personnummer" />
+          </Key>
+          <Property Name="Personnummer" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Fornamn" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Efternamn" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Epost" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Telefon" Type="char" MaxLength="12" Nullable="false" />
+          <Property Name="Klasskod" Type="char" MaxLength="5" />
+          <Property Name="Ort" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Klass">
+          <Key>
+            <PropertyRef Name="Kod" />
+          </Key>
+          <Property Name="Kod" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="Namn" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Arskurs" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KlassKurs">
+          <Key>
+            <PropertyRef Name="Klasskod" />
+            <PropertyRef Name="Kurskod" />
+          </Key>
+          <Property Name="Klasskod" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="Kurskod" Type="char" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Kurs">
+          <Key>
+            <PropertyRef Name="Kod" />
+          </Key>
+          <Property Name="Kod" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="Namn" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Startdatum" Type="date" Nullable="false" />
+          <Property Name="Poang" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KursBetyg">
+          <Key>
+            <PropertyRef Name="Personnummer" />
+            <PropertyRef Name="Kurskod" />
+          </Key>
+          <Property Name="Personnummer" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Kurskod" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="Betyg" Type="char" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="KursLokal">
+          <Key>
+            <PropertyRef Name="Kurskod" />
+            <PropertyRef Name="Lokalnummer" />
+          </Key>
+          <Property Name="Kurskod" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="Lokalnummer" Type="int" Nullable="false" />
+          <Property Name="Datum" Type="date" />
+          <Property Name="Tid" Type="time" Precision="7" />
+        </EntityType>
+        <EntityType Name="Larare">
+          <Key>
+            <PropertyRef Name="Anstallningsnummer" />
+          </Key>
+          <Property Name="Anstallningsnummer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fornamn" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Efternamn" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Epost" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Telefon" Type="char" MaxLength="12" Nullable="false" />
+          <Property Name="Avdelningsnummer" Type="int" />
+          <Property Name="Ort" Type="nvarchar" MaxLength="50" />
+          <Property Name="Lon" Type="int" />
+        </EntityType>
+        <EntityType Name="Lokal">
+          <Key>
+            <PropertyRef Name="Lokalnummer" />
+          </Key>
+          <Property Name="Lokalnummer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Namn" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="AntalPlatser" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TidigareElev">
+          <Key>
+            <PropertyRef Name="Personnummer" />
+          </Key>
+          <Property Name="Personnummer" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Förnamn" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Efternamn" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Klasskod" Type="char" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="Undervisar">
+          <Key>
+            <PropertyRef Name="Kurskod" />
+            <PropertyRef Name="Anstallningsnummer" />
+          </Key>
+          <Property Name="Kurskod" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="Anstallningsnummer" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Elev_Klass">
+          <End Role="Klass" Type="Self.Klass" Multiplicity="0..1" />
+          <End Role="Elev" Type="Self.Elev" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Klass">
+              <PropertyRef Name="Kod" />
+            </Principal>
+            <Dependent Role="Elev">
+              <PropertyRef Name="Klasskod" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KlassKurs_Klass">
+          <End Role="Klass" Type="Self.Klass" Multiplicity="1" />
+          <End Role="KlassKurs" Type="Self.KlassKurs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Klass">
+              <PropertyRef Name="Kod" />
+            </Principal>
+            <Dependent Role="KlassKurs">
+              <PropertyRef Name="Klasskod" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KlassKurs_Kurs">
+          <End Role="Kurs" Type="Self.Kurs" Multiplicity="1" />
+          <End Role="KlassKurs" Type="Self.KlassKurs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kurs">
+              <PropertyRef Name="Kod" />
+            </Principal>
+            <Dependent Role="KlassKurs">
+              <PropertyRef Name="Kurskod" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KursBetyg_Betyg">
+          <End Role="BetygVarde" Type="Self.BetygVarde" Multiplicity="0..1" />
+          <End Role="KursBetyg" Type="Self.KursBetyg" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BetygVarde">
+              <PropertyRef Name="Betyg" />
+            </Principal>
+            <Dependent Role="KursBetyg">
+              <PropertyRef Name="Betyg" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kursbetyg_Elev">
+          <End Role="Elev" Type="Self.Elev" Multiplicity="1" />
+          <End Role="KursBetyg" Type="Self.KursBetyg" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Elev">
+              <PropertyRef Name="Personnummer" />
+            </Principal>
+            <Dependent Role="KursBetyg">
+              <PropertyRef Name="Personnummer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kursbetyg_Kurs">
+          <End Role="Kurs" Type="Self.Kurs" Multiplicity="1" />
+          <End Role="KursBetyg" Type="Self.KursBetyg" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kurs">
+              <PropertyRef Name="Kod" />
+            </Principal>
+            <Dependent Role="KursBetyg">
+              <PropertyRef Name="Kurskod" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KursLokal_Kurs">
+          <End Role="Kurs" Type="Self.Kurs" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="KursLokal" Type="Self.KursLokal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kurs">
+              <PropertyRef Name="Kod" />
+            </Principal>
+            <Dependent Role="KursLokal">
+              <PropertyRef Name="Kurskod" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KursLokal_Lokal">
+          <End Role="Lokal" Type="Self.Lokal" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="KursLokal" Type="Self.KursLokal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lokal">
+              <PropertyRef Name="Lokalnummer" />
+            </Principal>
+            <Dependent Role="KursLokal">
+              <PropertyRef Name="Lokalnummer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Larare_Avdelning">
+          <End Role="Avdelning" Type="Self.Avdelning" Multiplicity="0..1" />
+          <End Role="Larare" Type="Self.Larare" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Avdelning">
+              <PropertyRef Name="Avdelningsnummer" />
+            </Principal>
+            <Dependent Role="Larare">
+              <PropertyRef Name="Avdelningsnummer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Undervisar_Larare">
+          <End Role="Larare" Type="Self.Larare" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Undervisar" Type="Self.Undervisar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Larare">
+              <PropertyRef Name="Anstallningsnummer" />
+            </Principal>
+            <Dependent Role="Undervisar">
+              <PropertyRef Name="Anstallningsnummer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Undervisarl_Kurs">
+          <End Role="Kurs" Type="Self.Kurs" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Undervisar" Type="Self.Undervisar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kurs">
+              <PropertyRef Name="Kod" />
+            </Principal>
+            <Dependent Role="Undervisar">
+              <PropertyRef Name="Kurskod" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SkolaModelStoreContainer">
+          <EntitySet Name="Avdelning" EntityType="Self.Avdelning" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BetygConvert" EntityType="Self.BetygConvert" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BetygVarde" EntityType="Self.BetygVarde" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Elev" EntityType="Self.Elev" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Klass" EntityType="Self.Klass" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KlassKurs" EntityType="Self.KlassKurs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kurs" EntityType="Self.Kurs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KursBetyg" EntityType="Self.KursBetyg" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KursLokal" EntityType="Self.KursLokal" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Larare" EntityType="Self.Larare" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Lokal" EntityType="Self.Lokal" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TidigareElev" EntityType="Self.TidigareElev" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Undervisar" EntityType="Self.Undervisar" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Elev_Klass" Association="Self.FK_Elev_Klass">
+            <End Role="Klass" EntitySet="Klass" />
+            <End Role="Elev" EntitySet="Elev" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KlassKurs_Klass" Association="Self.FK_KlassKurs_Klass">
+            <End Role="Klass" EntitySet="Klass" />
+            <End Role="KlassKurs" EntitySet="KlassKurs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KlassKurs_Kurs" Association="Self.FK_KlassKurs_Kurs">
+            <End Role="Kurs" EntitySet="Kurs" />
+            <End Role="KlassKurs" EntitySet="KlassKurs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KursBetyg_Betyg" Association="Self.FK_KursBetyg_Betyg">
+            <End Role="BetygVarde" EntitySet="BetygVarde" />
+            <End Role="KursBetyg" EntitySet="KursBetyg" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kursbetyg_Elev" Association="Self.FK_Kursbetyg_Elev">
+            <End Role="Elev" EntitySet="Elev" />
+            <End Role="KursBetyg" EntitySet="KursBetyg" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kursbetyg_Kurs" Association="Self.FK_Kursbetyg_Kurs">
+            <End Role="Kurs" EntitySet="Kurs" />
+            <End Role="KursBetyg" EntitySet="KursBetyg" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KursLokal_Kurs" Association="Self.FK_KursLokal_Kurs">
+            <End Role="Kurs" EntitySet="Kurs" />
+            <End Role="KursLokal" EntitySet="KursLokal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KursLokal_Lokal" Association="Self.FK_KursLokal_Lokal">
+            <End Role="Lokal" EntitySet="Lokal" />
+            <End Role="KursLokal" EntitySet="KursLokal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Larare_Avdelning" Association="Self.FK_Larare_Avdelning">
+            <End Role="Avdelning" EntitySet="Avdelning" />
+            <End Role="Larare" EntitySet="Larare" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Undervisar_Larare" Association="Self.FK_Undervisar_Larare">
+            <End Role="Larare" EntitySet="Larare" />
+            <End Role="Undervisar" EntitySet="Undervisar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Undervisarl_Kurs" Association="Self.FK_Undervisarl_Kurs">
+            <End Role="Kurs" EntitySet="Kurs" />
+            <End Role="Undervisar" EntitySet="Undervisar" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SkolaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Avdelning">
+          <Key>
+            <PropertyRef Name="Avdelningsnummer" />
+          </Key>
+          <Property Name="Avdelningsnummer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Namn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Larare" Relationship="Self.FK_Larare_Avdelning" FromRole="Avdelning" ToRole="Larare" />
+        </EntityType>
+        <EntityType Name="BetygConvert">
+          <Key>
+            <PropertyRef Name="Betyg" />
+          </Key>
+          <Property Name="Betyg" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Poäng" Type="Int32" />
+        </EntityType>
+        <EntityType Name="BetygVarde">
+          <Key>
+            <PropertyRef Name="Betyg" />
+          </Key>
+          <Property Name="Betyg" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Varde" Type="Byte" Nullable="false" />
+          <NavigationProperty Name="KursBetyg" Relationship="Self.FK_KursBetyg_Betyg" FromRole="BetygVarde" ToRole="KursBetyg" />
+        </EntityType>
+        <EntityType Name="Elev">
+          <Key>
+            <PropertyRef Name="Personnummer" />
+          </Key>
+          <Property Name="Personnummer" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Fornamn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Efternamn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Epost" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Telefon" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Klasskod" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Name="Ort" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Klass" Relationship="Self.FK_Elev_Klass" FromRole="Elev" ToRole="Klass" />
+          <NavigationProperty Name="KursBetyg" Relationship="Self.FK_Kursbetyg_Elev" FromRole="Elev" ToRole="KursBetyg" />
+        </EntityType>
+        <EntityType Name="Klass">
+          <Key>
+            <PropertyRef Name="Kod" />
+          </Key>
+          <Property Name="Kod" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Namn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Arskurs" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Elev" Relationship="Self.FK_Elev_Klass" FromRole="Klass" ToRole="Elev" />
+          <NavigationProperty Name="Kurs" Relationship="Self.KlassKurs" FromRole="Klass" ToRole="Kurs" />
+        </EntityType>
+        <EntityType Name="Kurs">
+          <Key>
+            <PropertyRef Name="Kod" />
+          </Key>
+          <Property Name="Kod" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Namn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Startdatum" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Poang" Type="Byte" Nullable="false" />
+          <NavigationProperty Name="KursBetyg" Relationship="Self.FK_Kursbetyg_Kurs" FromRole="Kurs" ToRole="KursBetyg" />
+          <NavigationProperty Name="KursLokal" Relationship="Self.FK_KursLokal_Kurs" FromRole="Kurs" ToRole="KursLokal" />
+          <NavigationProperty Name="Klass" Relationship="Self.KlassKurs" FromRole="Kurs" ToRole="Klass" />
+          <NavigationProperty Name="Larare" Relationship="Self.Undervisar" FromRole="Kurs" ToRole="Larare" />
+        </EntityType>
+        <EntityType Name="KursBetyg">
+          <Key>
+            <PropertyRef Name="Personnummer" />
+            <PropertyRef Name="Kurskod" />
+          </Key>
+          <Property Name="Personnummer" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Kurskod" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Betyg" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="BetygVarde" Relationship="Self.FK_KursBetyg_Betyg" FromRole="KursBetyg" ToRole="BetygVarde" />
+          <NavigationProperty Name="Elev" Relationship="Self.FK_Kursbetyg_Elev" FromRole="KursBetyg" ToRole="Elev" />
+          <NavigationProperty Name="Kurs" Relationship="Self.FK_Kursbetyg_Kurs" FromRole="KursBetyg" ToRole="Kurs" />
+        </EntityType>
+        <EntityType Name="KursLokal">
+          <Key>
+            <PropertyRef Name="Kurskod" />
+            <PropertyRef Name="Lokalnummer" />
+          </Key>
+          <Property Name="Kurskod" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Lokalnummer" Type="Int32" Nullable="false" />
+          <Property Name="Datum" Type="DateTime" Precision="0" />
+          <Property Name="Tid" Type="Time" Precision="7" />
+          <NavigationProperty Name="Kurs" Relationship="Self.FK_KursLokal_Kurs" FromRole="KursLokal" ToRole="Kurs" />
+          <NavigationProperty Name="Lokal" Relationship="Self.FK_KursLokal_Lokal" FromRole="KursLokal" ToRole="Lokal" />
+        </EntityType>
+        <EntityType Name="Larare">
+          <Key>
+            <PropertyRef Name="Anstallningsnummer" />
+          </Key>
+          <Property Name="Anstallningsnummer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fornamn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Efternamn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Epost" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Telefon" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Avdelningsnummer" Type="Int32" />
+          <Property Name="Ort" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Lon" Type="Int32" />
+          <NavigationProperty Name="Avdelning" Relationship="Self.FK_Larare_Avdelning" FromRole="Larare" ToRole="Avdelning" />
+          <NavigationProperty Name="Kurs" Relationship="Self.Undervisar" FromRole="Larare" ToRole="Kurs" />
+        </EntityType>
+        <EntityType Name="Lokal">
+          <Key>
+            <PropertyRef Name="Lokalnummer" />
+          </Key>
+          <Property Name="Lokalnummer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Namn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AntalPlatser" Type="Byte" Nullable="false" />
+          <NavigationProperty Name="KursLokal" Relationship="Self.FK_KursLokal_Lokal" FromRole="Lokal" ToRole="KursLokal" />
+        </EntityType>
+        <EntityType Name="TidigareElev">
+          <Key>
+            <PropertyRef Name="Personnummer" />
+          </Key>
+          <Property Name="Personnummer" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Förnamn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Efternamn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Klasskod" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_Larare_Avdelning">
+          <End Role="Avdelning" Type="Self.Avdelning" Multiplicity="0..1" />
+          <End Role="Larare" Type="Self.Larare" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Avdelning">
+              <PropertyRef Name="Avdelningsnummer" />
+            </Principal>
+            <Dependent Role="Larare">
+              <PropertyRef Name="Avdelningsnummer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KursBetyg_Betyg">
+          <End Role="BetygVarde" Type="Self.BetygVarde" Multiplicity="0..1" />
+          <End Role="KursBetyg" Type="Self.KursBetyg" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BetygVarde">
+              <PropertyRef Name="Betyg" />
+            </Principal>
+            <Dependent Role="KursBetyg">
+              <PropertyRef Name="Betyg" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Elev_Klass">
+          <End Role="Klass" Type="Self.Klass" Multiplicity="0..1" />
+          <End Role="Elev" Type="Self.Elev" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Klass">
+              <PropertyRef Name="Kod" />
+            </Principal>
+            <Dependent Role="Elev">
+              <PropertyRef Name="Klasskod" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kursbetyg_Elev">
+          <End Role="Elev" Type="Self.Elev" Multiplicity="1" />
+          <End Role="KursBetyg" Type="Self.KursBetyg" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Elev">
+              <PropertyRef Name="Personnummer" />
+            </Principal>
+            <Dependent Role="KursBetyg">
+              <PropertyRef Name="Personnummer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kursbetyg_Kurs">
+          <End Role="Kurs" Type="Self.Kurs" Multiplicity="1" />
+          <End Role="KursBetyg" Type="Self.KursBetyg" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kurs">
+              <PropertyRef Name="Kod" />
+            </Principal>
+            <Dependent Role="KursBetyg">
+              <PropertyRef Name="Kurskod" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KursLokal_Kurs">
+          <End Role="Kurs" Type="Self.Kurs" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="KursLokal" Type="Self.KursLokal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kurs">
+              <PropertyRef Name="Kod" />
+            </Principal>
+            <Dependent Role="KursLokal">
+              <PropertyRef Name="Kurskod" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KursLokal_Lokal">
+          <End Role="Lokal" Type="Self.Lokal" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="KursLokal" Type="Self.KursLokal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lokal">
+              <PropertyRef Name="Lokalnummer" />
+            </Principal>
+            <Dependent Role="KursLokal">
+              <PropertyRef Name="Lokalnummer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="KlassKurs">
+          <End Role="Klass" Type="Self.Klass" Multiplicity="*" />
+          <End Role="Kurs" Type="Self.Kurs" Multiplicity="*" />
+        </Association>
+        <Association Name="Undervisar">
+          <End Role="Larare" Type="Self.Larare" Multiplicity="*" />
+          <End Role="Kurs" Type="Self.Kurs" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="SkolaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Avdelning" EntityType="Self.Avdelning" />
+          <EntitySet Name="BetygConvert" EntityType="Self.BetygConvert" />
+          <EntitySet Name="BetygVarde" EntityType="Self.BetygVarde" />
+          <EntitySet Name="Elev" EntityType="Self.Elev" />
+          <EntitySet Name="Klass" EntityType="Self.Klass" />
+          <EntitySet Name="Kurs" EntityType="Self.Kurs" />
+          <EntitySet Name="KursBetyg" EntityType="Self.KursBetyg" />
+          <EntitySet Name="KursLokal" EntityType="Self.KursLokal" />
+          <EntitySet Name="Larare" EntityType="Self.Larare" />
+          <EntitySet Name="Lokal" EntityType="Self.Lokal" />
+          <EntitySet Name="TidigareElev" EntityType="Self.TidigareElev" />
+          <AssociationSet Name="FK_Larare_Avdelning" Association="Self.FK_Larare_Avdelning">
+            <End Role="Avdelning" EntitySet="Avdelning" />
+            <End Role="Larare" EntitySet="Larare" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KursBetyg_Betyg" Association="Self.FK_KursBetyg_Betyg">
+            <End Role="BetygVarde" EntitySet="BetygVarde" />
+            <End Role="KursBetyg" EntitySet="KursBetyg" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Elev_Klass" Association="Self.FK_Elev_Klass">
+            <End Role="Klass" EntitySet="Klass" />
+            <End Role="Elev" EntitySet="Elev" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kursbetyg_Elev" Association="Self.FK_Kursbetyg_Elev">
+            <End Role="Elev" EntitySet="Elev" />
+            <End Role="KursBetyg" EntitySet="KursBetyg" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kursbetyg_Kurs" Association="Self.FK_Kursbetyg_Kurs">
+            <End Role="Kurs" EntitySet="Kurs" />
+            <End Role="KursBetyg" EntitySet="KursBetyg" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KursLokal_Kurs" Association="Self.FK_KursLokal_Kurs">
+            <End Role="Kurs" EntitySet="Kurs" />
+            <End Role="KursLokal" EntitySet="KursLokal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KursLokal_Lokal" Association="Self.FK_KursLokal_Lokal">
+            <End Role="Lokal" EntitySet="Lokal" />
+            <End Role="KursLokal" EntitySet="KursLokal" />
+          </AssociationSet>
+          <AssociationSet Name="KlassKurs" Association="Self.KlassKurs">
+            <End Role="Klass" EntitySet="Klass" />
+            <End Role="Kurs" EntitySet="Kurs" />
+          </AssociationSet>
+          <AssociationSet Name="Undervisar" Association="Self.Undervisar">
+            <End Role="Larare" EntitySet="Larare" />
+            <End Role="Kurs" EntitySet="Kurs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SkolaModelStoreContainer" CdmEntityContainer="SkolaEntities">
+          <EntitySetMapping Name="Avdelning">
+            <EntityTypeMapping TypeName="SkolaModel.Avdelning">
+              <MappingFragment StoreEntitySet="Avdelning">
+                <ScalarProperty Name="Avdelningsnummer" ColumnName="Avdelningsnummer" />
+                <ScalarProperty Name="Namn" ColumnName="Namn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BetygConvert">
+            <EntityTypeMapping TypeName="SkolaModel.BetygConvert">
+              <MappingFragment StoreEntitySet="BetygConvert">
+                <ScalarProperty Name="Betyg" ColumnName="Betyg" />
+                <ScalarProperty Name="Poäng" ColumnName="Poäng" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BetygVarde">
+            <EntityTypeMapping TypeName="SkolaModel.BetygVarde">
+              <MappingFragment StoreEntitySet="BetygVarde">
+                <ScalarProperty Name="Betyg" ColumnName="Betyg" />
+                <ScalarProperty Name="Varde" ColumnName="Varde" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Elev">
+            <EntityTypeMapping TypeName="SkolaModel.Elev">
+              <MappingFragment StoreEntitySet="Elev">
+                <ScalarProperty Name="Personnummer" ColumnName="Personnummer" />
+                <ScalarProperty Name="Fornamn" ColumnName="Fornamn" />
+                <ScalarProperty Name="Efternamn" ColumnName="Efternamn" />
+                <ScalarProperty Name="Epost" ColumnName="Epost" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Klasskod" ColumnName="Klasskod" />
+                <ScalarProperty Name="Ort" ColumnName="Ort" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Klass">
+            <EntityTypeMapping TypeName="SkolaModel.Klass">
+              <MappingFragment StoreEntitySet="Klass">
+                <ScalarProperty Name="Kod" ColumnName="Kod" />
+                <ScalarProperty Name="Namn" ColumnName="Namn" />
+                <ScalarProperty Name="Arskurs" ColumnName="Arskurs" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kurs">
+            <EntityTypeMapping TypeName="SkolaModel.Kurs">
+              <MappingFragment StoreEntitySet="Kurs">
+                <ScalarProperty Name="Kod" ColumnName="Kod" />
+                <ScalarProperty Name="Namn" ColumnName="Namn" />
+                <ScalarProperty Name="Startdatum" ColumnName="Startdatum" />
+                <ScalarProperty Name="Poang" ColumnName="Poang" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KursBetyg">
+            <EntityTypeMapping TypeName="SkolaModel.KursBetyg">
+              <MappingFragment StoreEntitySet="KursBetyg">
+                <ScalarProperty Name="Personnummer" ColumnName="Personnummer" />
+                <ScalarProperty Name="Kurskod" ColumnName="Kurskod" />
+                <ScalarProperty Name="Betyg" ColumnName="Betyg" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KursLokal">
+            <EntityTypeMapping TypeName="SkolaModel.KursLokal">
+              <MappingFragment StoreEntitySet="KursLokal">
+                <ScalarProperty Name="Kurskod" ColumnName="Kurskod" />
+                <ScalarProperty Name="Lokalnummer" ColumnName="Lokalnummer" />
+                <ScalarProperty Name="Datum" ColumnName="Datum" />
+                <ScalarProperty Name="Tid" ColumnName="Tid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Larare">
+            <EntityTypeMapping TypeName="SkolaModel.Larare">
+              <MappingFragment StoreEntitySet="Larare">
+                <ScalarProperty Name="Anstallningsnummer" ColumnName="Anstallningsnummer" />
+                <ScalarProperty Name="Fornamn" ColumnName="Fornamn" />
+                <ScalarProperty Name="Efternamn" ColumnName="Efternamn" />
+                <ScalarProperty Name="Epost" ColumnName="Epost" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Avdelningsnummer" ColumnName="Avdelningsnummer" />
+                <ScalarProperty Name="Ort" ColumnName="Ort" />
+                <ScalarProperty Name="Lon" ColumnName="Lon" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Lokal">
+            <EntityTypeMapping TypeName="SkolaModel.Lokal">
+              <MappingFragment StoreEntitySet="Lokal">
+                <ScalarProperty Name="Lokalnummer" ColumnName="Lokalnummer" />
+                <ScalarProperty Name="Namn" ColumnName="Namn" />
+                <ScalarProperty Name="AntalPlatser" ColumnName="AntalPlatser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TidigareElev">
+            <EntityTypeMapping TypeName="SkolaModel.TidigareElev">
+              <MappingFragment StoreEntitySet="TidigareElev">
+                <ScalarProperty Name="Personnummer" ColumnName="Personnummer" />
+                <ScalarProperty Name="Förnamn" ColumnName="Förnamn" />
+                <ScalarProperty Name="Efternamn" ColumnName="Efternamn" />
+                <ScalarProperty Name="Klasskod" ColumnName="Klasskod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="KlassKurs" TypeName="SkolaModel.KlassKurs" StoreEntitySet="KlassKurs">
+            <EndProperty Name="Klass">
+              <ScalarProperty Name="Kod" ColumnName="Klasskod" />
+            </EndProperty>
+            <EndProperty Name="Kurs">
+              <ScalarProperty Name="Kod" ColumnName="Kurskod" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="Undervisar" TypeName="SkolaModel.Undervisar" StoreEntitySet="Undervisar">
+            <EndProperty Name="Larare">
+              <ScalarProperty Name="Anstallningsnummer" ColumnName="Anstallningsnummer" />
+            </EndProperty>
+            <EndProperty Name="Kurs">
+              <ScalarProperty Name="Kod" ColumnName="Kurskod" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
